@@ -1,0 +1,63 @@
+TBoxCodeSamples
+v7
+r1
+cCheck dependencies
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/BoxCodeSamples-Info.plist
+c000000004AF0AABC000000000000038D
+t1257286332
+s909
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/MainWindow.xib
+c000000004AF0AABC0000000000001F3D
+t1257286332
+s7997
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Info.plist
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Resources/BoxCodeSamples-Info.plist
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Resources/BoxCodeSamples.app
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+NBoxCodeSamples-Info.plist
+c000000004AF0AABC000000000000038D
+t1257286332
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies329863507#329863507#0(515"[WARN]Warning: The Copy Bundle Resources build phase contains this target's Info.plist file 'BoxCodeSamples-Info.plist'.[BEROR]error: There is no SDK with the name or path 'iphoneos3.2'File /Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app depends on itself.  This target might include its own product.File /Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app depends on itself.  This target might include its own product.4(22@114"Warning: The Copy Bundle Resources build phase contains this target's Info.plist file 'BoxCodeSamples-Info.plist'.329863507#18446744073709551615#0#0(1@0"0(4@58"error: There is no SDK with the name or path 'iphoneos3.2'329863507#18446744073709551615#0#0(1@0"0(4@163"File /Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app depends on itself.  This target might include its own product.329863507#18446744073709551615#0#0(1@0"0(4@163"File /Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app depends on itself.  This target might include its own product.329863507#18446744073709551615#0#0(1@0"0(0#1#0"29836824280170608#0"0#
+
+CCompileXIB "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/MainWindow.xib"
+r0
+
+CCopyPlistFile "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Resources/BoxCodeSamples-Info.plist" BoxCodeSamples-Info.plist
+r0
+
+CCpResource build/Debug/BoxCodeSamples.app/Contents/Resources/BoxCodeSamples.app build/Debug/BoxCodeSamples.app
+r0
+
+CProcessInfoPlistFile "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app/Contents/Info.plist" BoxCodeSamples-Info.plist
+r0
+
+CTouch "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug/BoxCodeSamples.app"
+r0
+

@@ -1,0 +1,501 @@
+TBoxCodeSamples
+v7
+r1
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk
+c000000004DF92CE80000000000000110
+t1308175592
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+c000000004D4F6A4700000000000001E5
+t1297050183
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004D54D18C00000000003532A0
+t1297404300
+s3486368
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D54D1F500000000003E22F0
+t1297404405
+s4072176
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D54D1DD0000000000001466
+t1297404381
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D5A28AB0000000000000AA1
+t1297754283
+s2721
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004D5A292A0000000000CA2AE0
+t1297754410
+s13249248
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/TargetConditionals.h
+c000000004D4F74C200000000000031E9
+t1297052866
+s12777
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/regex.h
+c000000004D4F6E91000000000000154F
+t1297051281
+s5455
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/BoxCodeSamples-Info.plist
+c000000004AF0AABC000000000000038D
+t1257286332
+s909
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/BoxCodeSamples_Prefix.pch
+c000000004AF0AABC00000000000000C5
+t1257286332
+s197
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxCodeSamplesAppDelegate.h
+c000000004AF0AABC0000000000000433
+t1257286332
+s1075
+i<UIKit/UIKit.h>
+i"BoxHTTPRequestBuilders.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxCodeSamplesAppDelegate.m
+c000000004C92EBE50000000000001CF4
+t1284697061
+s7412
+i"BoxCodeSamplesAppDelegate.h"
+i"BoxLoginModelXMLBuilder.h"
+i"BoxFolderModel.h"
+i"BoxFolderXMLBuilder.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFileModel.h
+c000000004AF0AABC000000000000078F
+t1257286332
+s1935
+i<Foundation/Foundation.h>
+i"BoxObjectModel.h"
+i"BoxModelUtilityFunctions.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFileModel.m
+c000000004AF0AABC0000000000001525
+t1257286332
+s5413
+i"BoxFileModel.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderModel.h
+c000000004AF0AABC00000000000007FD
+t1257286332
+s2045
+i<Foundation/Foundation.h>
+i"BoxObjectModel.h"
+i"BoxModelUtilityFunctions.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderModel.m
+c000000004AF0AABC00000000000013B5
+t1257286332
+s5045
+i"BoxFolderModel.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderXMLBuilder.h
+c000000004AF0AABC00000000000007E6
+t1257286332
+s2022
+i<UIKit/UIKit.h>
+i"BoxFolderModel.h"
+i"BoxFileModel.h"
+i"BoxRESTApiFactory.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderXMLBuilder.m
+c000000004AF0AABC0000000000001B25
+t1257286332
+s6949
+i"BoxFolderXMLBuilder.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxHTTPRequestBuilders.h
+c000000004AF0AABC0000000000000A96
+t1257286332
+s2710
+i<Foundation/Foundation.h>
+i"BoxUserModel.h"
+i"BoxRESTApiFactory.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxHTTPRequestBuilders.m
+c000000004C92EBB80000000000001965
+t1284697016
+s6501
+i"BoxHTTPRequestBuilders.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.h
+c000000004AF0AABC0000000000000A9A
+t1257286332
+s2714
+i<UIKit/UIKit.h>
+i"BoxRESTApiFactory.h"
+i"BoxUserModel.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.m
+c000000004AF0AABC00000000000011D5
+t1257286332
+s4565
+i"BoxLoginModelXMLBuilder.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxModelUtilityFunctions.h
+c000000004AF0AABC00000000000004A6
+t1257286332
+s1190
+i<Foundation/Foundation.h>
+i"GTMRegex.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxModelUtilityFunctions.m
+c000000004AF0AABC00000000000008FC
+t1257286332
+s2300
+i"BoxModelUtilityFunctions.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxObjectModel.h
+c000000004AF0AABC0000000000000961
+t1257286332
+s2401
+i<Foundation/Foundation.h>
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxObjectModel.m
+c000000004AF0AABC00000000000015D7
+t1257286332
+s5591
+i"BoxObjectModel.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxRESTApiFactory.h
+c000000004AF0AABC0000000000000ED5
+t1257286332
+s3797
+i<Foundation/Foundation.h>
+i"BoxModelUtilityFunctions.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxRESTApiFactory.m
+c000000004C93B5620000000000001537
+t1284748642
+s5431
+i"BoxRESTApiFactory.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxUserModel.h
+c000000004AF0AABC0000000000000B8D
+t1257286332
+s2957
+i<Foundation/Foundation.h>
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxUserModel.m
+c000000004C92F0C30000000000000DEB
+t1284698307
+s3563
+i"BoxUserModel.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/GTMDefines.h
+c000000004AF0AABC0000000000001A17
+t1257286332
+s6679
+i<TargetConditionals.h>
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/GTMRegex.h
+c000000004AF0AABC00000000000039FC
+t1257286332
+s14844
+i<Foundation/Foundation.h>
+i<regex.h>
+i"GTMDefines.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/GTMRegex.m
+c000000004AF0AABC00000000000067A5
+t1257286332
+s26533
+i"GTMRegex.h"
+i"GTMDefines.h"
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/MainWindow.xib
+c000000004AF0AABC0000000000001F3D
+t1257286332
+s7997
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxCodeSamples
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxCodeSamples.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxCodeSamplesAppDelegate.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFileModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFolderModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFolderXMLBuilder.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxHTTPRequestBuilders.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxLoginModelXMLBuilder.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxModelUtilityFunctions.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxObjectModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxRESTApiFactory.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxUserModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/GTMRegex.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/main.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxCodeSamples
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxCodeSamples.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxCodeSamplesAppDelegate.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFileModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFolderModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFolderXMLBuilder.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxHTTPRequestBuilders.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxLoginModelXMLBuilder.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxModelUtilityFunctions.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxObjectModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxRESTApiFactory.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxUserModel.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/GTMRegex.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/main.o
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app.dSYM
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples-Info.plist
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples.app
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/Info.plist
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/MainWindow.nib
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/PkgInfo
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/ResourceRules.plist
+t2
+s0
+
+N/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/main.m
+c000000004AF0AABC0000000000000166
+t1257286332
+s358
+i<UIKit/UIKit.h>
+
+N/var/folders/Wi/WiXQpGywGrSU8pHIs+4Y-EfcrBI/-Caches-/com.apple.Xcode.183033045/SharedPrecompiledHeaders/BoxCodeSamples_Prefix-fmsiqqnwrvmxzpadofylzrlrwzjt/BoxCodeSamples_Prefix.pch.gch
+t2
+s0
+
+N/var/folders/Wi/WiXQpGywGrSU8pHIs+4Y-EfcrBI/-Caches-/com.apple.Xcode.183033045/SharedPrecompiledHeaders/BoxCodeSamples_Prefix-hjbjogtyxsqhbqaukgzzjpziuiag/BoxCodeSamples_Prefix.pch.gch
+t2
+s0
+
+NBoxCodeSamples-Info.plist
+c000000004AF0AABC000000000000038D
+t1257286332
+s909
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxCodeSamplesAppDelegate.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxCodeSamplesAppDelegate.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFileModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFileModel.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFolderModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderModel.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxFolderXMLBuilder.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderXMLBuilder.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxHTTPRequestBuilders.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxHTTPRequestBuilders.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxLoginModelXMLBuilder.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxModelUtilityFunctions.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxModelUtilityFunctions.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxObjectModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxObjectModel.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxRESTApiFactory.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxRESTApiFactory.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxUserModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxUserModel.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/GTMRegex.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/GTMRegex.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/main.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/main.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxCodeSamplesAppDelegate.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxCodeSamplesAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFileModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFileModel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFolderModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderModel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxFolderXMLBuilder.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxFolderXMLBuilder.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxHTTPRequestBuilders.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxHTTPRequestBuilders.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxLoginModelXMLBuilder.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxModelUtilityFunctions.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxModelUtilityFunctions.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxObjectModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxObjectModel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxRESTApiFactory.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxRESTApiFactory.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxUserModel.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/BoxUserModel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/GTMRegex.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/Classes/GTMRegex.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/main.o "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileXIB "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/MainWindow.xib"
+r0
+
+CCopyPlistFile "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples-Info.plist" BoxCodeSamples-Info.plist
+r0
+
+CCpResource build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples.app build/Debug-iphoneos/BoxCodeSamples.app
+r0
+
+CCpResource build/Debug-iphoneos/BoxCodeSamples.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/ResourceRules.plist
+r0
+
+CCreateUniversalBinary "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples" normal "armv6 armv7"
+r0
+
+CGenerateDSYMFile "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app.dSYM" "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/BoxCodeSamples"
+r0
+
+CLd "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv6/BoxCodeSamples" normal armv6
+r0
+
+CLd "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/BoxCodeSamples.build/Debug-iphoneos/BoxCodeSamples.build/Objects-normal/armv7/BoxCodeSamples" normal armv7
+r0
+
+CProcessInfoPlistFile "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app/Info.plist" BoxCodeSamples-Info.plist
+r0
+
+CProcessPCH /var/folders/Wi/WiXQpGywGrSU8pHIs+4Y-EfcrBI/-Caches-/com.apple.Xcode.183033045/SharedPrecompiledHeaders/BoxCodeSamples_Prefix-fmsiqqnwrvmxzpadofylzrlrwzjt/BoxCodeSamples_Prefix.pch.gch BoxCodeSamples_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CProcessPCH /var/folders/Wi/WiXQpGywGrSU8pHIs+4Y-EfcrBI/-Caches-/com.apple.Xcode.183033045/SharedPrecompiledHeaders/BoxCodeSamples_Prefix-hjbjogtyxsqhbqaukgzzjpziuiag/BoxCodeSamples_Prefix.pch.gch BoxCodeSamples_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CTouch "/Users/srose/Desktop/Box Popup and Sample Classes/BoxCodeSamples/build/Debug-iphoneos/BoxCodeSamples.app"
+r0
+

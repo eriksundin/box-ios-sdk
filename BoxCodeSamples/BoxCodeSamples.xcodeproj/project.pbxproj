@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		4159AD2813A9513E00220B71 /* BoxCodeSamples.app in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058910D05DD3D006BFB54 /* BoxCodeSamples.app */; };
+		4159AD2913A9514100220B71 /* BoxCodeSamples-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* BoxCodeSamples-Info.plist */; };
+		647894FB10A0D2FA009B1451 /* BoxRESTApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894E310A0D2FA009B1451 /* BoxRESTApiFactory.m */; };
+		647894FC10A0D2FA009B1451 /* BoxLoginModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894E510A0D2FA009B1451 /* BoxLoginModelXMLBuilder.m */; };
+		647894FD10A0D2FA009B1451 /* BoxFolderXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894E710A0D2FA009B1451 /* BoxFolderXMLBuilder.m */; };
+		647894FE10A0D2FA009B1451 /* BoxHTTPRequestBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894E910A0D2FA009B1451 /* BoxHTTPRequestBuilders.m */; };
+		647894FF10A0D2FA009B1451 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894ED10A0D2FA009B1451 /* GTMRegex.m */; };
+		6478950010A0D2FA009B1451 /* BoxModelUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894F010A0D2FA009B1451 /* BoxModelUtilityFunctions.m */; };
+		6478950110A0D2FA009B1451 /* BoxUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894F210A0D2FA009B1451 /* BoxUserModel.m */; };
+		6478950210A0D2FA009B1451 /* BoxObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894F410A0D2FA009B1451 /* BoxObjectModel.m */; };
+		6478950310A0D2FA009B1451 /* BoxFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894F610A0D2FA009B1451 /* BoxFileModel.m */; };
+		6478950410A0D2FA009B1451 /* BoxFolderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894F810A0D2FA009B1451 /* BoxFolderModel.m */; };
+		6478950510A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647894FA10A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* BoxCodeSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxCodeSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* BoxCodeSamples_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCodeSamples_Prefix.pch; sourceTree = "<group>"; };
+		647894E210A0D2FA009B1451 /* BoxRESTApiFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRESTApiFactory.h; sourceTree = "<group>"; };
+		647894E310A0D2FA009B1451 /* BoxRESTApiFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRESTApiFactory.m; sourceTree = "<group>"; };
+		647894E410A0D2FA009B1451 /* BoxLoginModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginModelXMLBuilder.h; sourceTree = "<group>"; };
+		647894E510A0D2FA009B1451 /* BoxLoginModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginModelXMLBuilder.m; sourceTree = "<group>"; };
+		647894E610A0D2FA009B1451 /* BoxFolderXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolderXMLBuilder.h; sourceTree = "<group>"; };
+		647894E710A0D2FA009B1451 /* BoxFolderXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolderXMLBuilder.m; sourceTree = "<group>"; };
+		647894E810A0D2FA009B1451 /* BoxHTTPRequestBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxHTTPRequestBuilders.h; sourceTree = "<group>"; };
+		647894E910A0D2FA009B1451 /* BoxHTTPRequestBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxHTTPRequestBuilders.m; sourceTree = "<group>"; };
+		647894EC10A0D2FA009B1451 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
+		647894ED10A0D2FA009B1451 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
+		647894EE10A0D2FA009B1451 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		647894EF10A0D2FA009B1451 /* BoxModelUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxModelUtilityFunctions.h; sourceTree = "<group>"; };
+		647894F010A0D2FA009B1451 /* BoxModelUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxModelUtilityFunctions.m; sourceTree = "<group>"; };
+		647894F110A0D2FA009B1451 /* BoxUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUserModel.h; sourceTree = "<group>"; };
+		647894F210A0D2FA009B1451 /* BoxUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUserModel.m; sourceTree = "<group>"; };
+		647894F310A0D2FA009B1451 /* BoxObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxObjectModel.h; sourceTree = "<group>"; };
+		647894F410A0D2FA009B1451 /* BoxObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxObjectModel.m; sourceTree = "<group>"; };
+		647894F510A0D2FA009B1451 /* BoxFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFileModel.h; sourceTree = "<group>"; };
+		647894F610A0D2FA009B1451 /* BoxFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFileModel.m; sourceTree = "<group>"; };
+		647894F710A0D2FA009B1451 /* BoxFolderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolderModel.h; sourceTree = "<group>"; };
+		647894F810A0D2FA009B1451 /* BoxFolderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolderModel.m; sourceTree = "<group>"; };
+		647894F910A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCodeSamplesAppDelegate.h; sourceTree = "<group>"; };
+		647894FA10A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCodeSamplesAppDelegate.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* BoxCodeSamples-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BoxCodeSamples-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				647894F910A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.h */,
+				647894FA10A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.m */,
+				647894EA10A0D2FA009B1451 /* Models */,
+				647894E010A0D2FA009B1451 /* Model Builders */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* BoxCodeSamples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* BoxCodeSamples_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* BoxCodeSamples-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		647894E010A0D2FA009B1451 /* Model Builders */ = {
+			isa = PBXGroup;
+			children = (
+				647894E410A0D2FA009B1451 /* BoxLoginModelXMLBuilder.h */,
+				647894E510A0D2FA009B1451 /* BoxLoginModelXMLBuilder.m */,
+				647894E610A0D2FA009B1451 /* BoxFolderXMLBuilder.h */,
+				647894E710A0D2FA009B1451 /* BoxFolderXMLBuilder.m */,
+				647894E810A0D2FA009B1451 /* BoxHTTPRequestBuilders.h */,
+				647894E910A0D2FA009B1451 /* BoxHTTPRequestBuilders.m */,
+				647894E110A0D2FA009B1451 /* Utilities */,
+			);
+			name = "Model Builders";
+			sourceTree = "<group>";
+		};
+		647894E110A0D2FA009B1451 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				647894E210A0D2FA009B1451 /* BoxRESTApiFactory.h */,
+				647894E310A0D2FA009B1451 /* BoxRESTApiFactory.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		647894EA10A0D2FA009B1451 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				647894F110A0D2FA009B1451 /* BoxUserModel.h */,
+				647894F210A0D2FA009B1451 /* BoxUserModel.m */,
+				647894F310A0D2FA009B1451 /* BoxObjectModel.h */,
+				647894F410A0D2FA009B1451 /* BoxObjectModel.m */,
+				647894F510A0D2FA009B1451 /* BoxFileModel.h */,
+				647894F610A0D2FA009B1451 /* BoxFileModel.m */,
+				647894F710A0D2FA009B1451 /* BoxFolderModel.h */,
+				647894F810A0D2FA009B1451 /* BoxFolderModel.m */,
+				647894EB10A0D2FA009B1451 /* Utilities */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		647894EB10A0D2FA009B1451 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				647894EC10A0D2FA009B1451 /* GTMRegex.h */,
+				647894ED10A0D2FA009B1451 /* GTMRegex.m */,
+				647894EE10A0D2FA009B1451 /* GTMDefines.h */,
+				647894EF10A0D2FA009B1451 /* BoxModelUtilityFunctions.h */,
+				647894F010A0D2FA009B1451 /* BoxModelUtilityFunctions.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* BoxCodeSamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BoxCodeSamples" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoxCodeSamples;
+			productName = BoxCodeSamples;
+			productReference = 1D6058910D05DD3D006BFB54 /* BoxCodeSamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BoxCodeSamples" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* BoxCodeSamples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				4159AD2813A9513E00220B71 /* BoxCodeSamples.app in Resources */,
+				4159AD2913A9514100220B71 /* BoxCodeSamples-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				647894FB10A0D2FA009B1451 /* BoxRESTApiFactory.m in Sources */,
+				647894FC10A0D2FA009B1451 /* BoxLoginModelXMLBuilder.m in Sources */,
+				647894FD10A0D2FA009B1451 /* BoxFolderXMLBuilder.m in Sources */,
+				647894FE10A0D2FA009B1451 /* BoxHTTPRequestBuilders.m in Sources */,
+				647894FF10A0D2FA009B1451 /* GTMRegex.m in Sources */,
+				6478950010A0D2FA009B1451 /* BoxModelUtilityFunctions.m in Sources */,
+				6478950110A0D2FA009B1451 /* BoxUserModel.m in Sources */,
+				6478950210A0D2FA009B1451 /* BoxObjectModel.m in Sources */,
+				6478950310A0D2FA009B1451 /* BoxFileModel.m in Sources */,
+				6478950410A0D2FA009B1451 /* BoxFolderModel.m in Sources */,
+				6478950510A0D2FA009B1451 /* BoxCodeSamplesAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BoxCodeSamples_Prefix.pch;
+				INFOPLIST_FILE = "BoxCodeSamples-Info.plist";
+				PRODUCT_NAME = BoxCodeSamples;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BoxCodeSamples_Prefix.pch;
+				INFOPLIST_FILE = "BoxCodeSamples-Info.plist";
+				PRODUCT_NAME = BoxCodeSamples;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BoxCodeSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BoxCodeSamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
