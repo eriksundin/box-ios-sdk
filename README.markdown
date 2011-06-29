@@ -16,7 +16,8 @@ Provides model and network code that makes it easy to use the Box API methods fo
 
 #### BoxPopup ####
 
-The BoxPopup Upload Plugin provides a UI to easily upload files to box.net and it can be easily integrated into existing applications. See "BoxPopup Readme" for specific implementation details.
+The BoxPopup Upload Plugin provides a UI to easily upload files to box.net, and it can be easily integrated into existing applications. See "BoxPopup Readme" for specific implementation details.
+
 
 ### Documentation ###
 
