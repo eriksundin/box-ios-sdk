@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  FolderChooserTableViewController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/9/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxFolderChooserTableViewController.h"
@@ -29,7 +25,7 @@
 
 #pragma mark Folder Methods
 
--(void)folderRetrievalCallback:(BoxFolderModel*)folderModel {
+-(void)folderRetrievalCallback:(BoxUser*)folderModel {
 	if(!folderModel) {
 		[BoxCommonUISetup popupAlertWithTitle:@"Error" andText:@"Could not access your box account at this time. Please check your internet connection and try again" andDelegate:nil];
 		[self.navigationController popViewControllerAnimated:YES];
@@ -42,15 +38,14 @@
 
 -(void)getFoldersAsync:(id)object {
 	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	BoxUserModel * userModel = [[[BoxUserModel alloc] init] autorelease];
-	[userModel populateFromSavedDictionary];
-	
+	BoxUser * userModel = [BoxUser savedUser];
+								
 	NSString * ticket = userModel.authToken;
 	// Step 2a
 	NSNumber * folderIdToDownload = [NSNumber numberWithInt:0];
 	// Step 2b
 	BoxFolderDownloadResponseType responseType = 0;
-	BoxFolderModel * folderModel = [BoxFolderXMLBuilder getFolderForId:folderIdToDownload andToken:ticket andResponsePointer:&responseType andBasePathOrNil:nil];
+	BoxFolder * folderModel = [BoxFolderXMLBuilder folderForId:folderIdToDownload token:ticket responsePointer:&responseType basePathOrNil:nil];
 
 	
 	// Step 2c
@@ -130,7 +125,6 @@
 	return headerView;
 }
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if(section == 1)
 		return [_folderModel getFolderCount];
@@ -139,7 +133,6 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
@@ -149,7 +142,7 @@
 	}
     
 	if(indexPath.section == 1) { // standard
-		BoxFolderModel * curModel = (BoxFolderModel*)[_folderModel.objectsInFolder objectAtIndex:[indexPath row]];
+		BoxFolder * curModel = (BoxFolder*)[_folderModel.objectsInFolder objectAtIndex:[indexPath row]];
 		cell.textLabel.text = curModel.objectName;
 		if(curModel.isCollaborated) {
 			cell.imageView.image = [UIImage imageNamed:@"BoxCollabFolder.png"];
@@ -171,14 +164,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(indexPath.section == 1) {
-		BoxFolderModel * folderModel = [_folderModel.objectsInFolder objectAtIndex:[indexPath row]];
+		BoxFolder * folderModel = [_folderModel.objectsInFolder objectAtIndex:[indexPath row]];
 		BOOL folderSaveSuccess = [folderModel saveAsCurrentFolder];
 		NSLog(@"Folder Save Success: %d", folderSaveSuccess);
 		[_filePathSelectorDelegate setUploadFolderModel:folderModel];
 		[self.navigationController popViewControllerAnimated:YES];
 	}
 	else {
-		[BoxFolderModel clearSavedFolder];
+		[BoxFolder clearSavedFolder];
 		[self.navigationController popViewControllerAnimated:YES];
 	}
 }

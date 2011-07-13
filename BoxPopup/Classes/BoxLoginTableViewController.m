@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxLoginTableViewController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/8/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxLoginTableViewController.h"
@@ -45,8 +41,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 	NSLog(@"View will appear in logintableviewcontroller");
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
-	if(![userModel userIsLoggedIn]) {
+	BoxUser * userModel = [BoxUser savedUser];
+	if(![userModel loggedIn]) {
 		NSLog(@"no token");
 		_userName.text = @"Please login";
 		_filePath.text = @"";
@@ -56,7 +52,7 @@
 		_userName.text = userModel.userName;
 		_filePath.text = @"/All Files";
 	}
-	BoxFolderModel * folderModel = [BoxFolderModel retrieveSavedFolder];
+	BoxFolder * folderModel = [BoxFolder savedFolder];
 	if(folderModel) {
 		NSLog(@"YES FolderModel: %@", folderModel.objectName);
 		_filePath.text = [NSString stringWithFormat:@"/All Files/%@",folderModel.objectName];
@@ -83,20 +79,17 @@
 }
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSLog(@"Give num rows in BoxLoginTableViewController");
     return 2;
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSLog(@"Asking for the cell");
     if(indexPath.row == 0) {
-		BoxUserModel * userModel = [[[BoxUserModel alloc] init] autorelease];
-		BOOL dictExists = [userModel populateFromSavedDictionary];
-		if(!dictExists || userModel.authToken == nil || [userModel.authToken compare:@""] == NSOrderedSame) {
+		BoxUser * userModel = [BoxUser savedUser];
+		if(![userModel loggedIn]) {
 			NSLog(@"Setting username text to 'Please Login'");
 			_userName.text = @"Please Login";
 		}
@@ -109,15 +102,15 @@
 		NSLog(@"Setting path to all files");
 		NSLog(@"_filePath: %@", _filePath);
 		if(_folderModel == nil) {
-			_folderModel = [[BoxFolderModel retrieveSavedFolder] retain];
+			_folderModel = [[BoxFolder savedFolder] retain];
 		}
 		if(_folderModel == nil) {
 			_filePath.text = @"/All Files";
 		}
 		if(_folderModel != nil)
 			_filePath.text = [NSString stringWithFormat:@"/All Files/%@", _folderModel.objectName];
-		BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
-		if(![userModel userIsLoggedIn]) {
+		BoxUser * userModel = [BoxUser savedUser];
+		if(![userModel loggedIn]) {
 			_filePath.text = @"";
 		}
 		return _filePathCell;
@@ -138,9 +131,8 @@
 		
 	}
 	else {
-		BoxUserModel *userModel = [[[BoxUserModel alloc] init] autorelease];
-		BOOL modelSuccess = [userModel populateFromSavedDictionary];
-		if(!modelSuccess || userModel.authToken == nil || [userModel.authToken compare:@""] == NSOrderedSame) {
+		BoxUser *userModel = [BoxUser savedUser];
+		if (![userModel loggedIn]) {
 			UIAlertView *alert;
 			alert = [[UIAlertView alloc] initWithTitle:@"Please Login or Register" message:@"Login to your Box.net account or register to upload your files"
 											  delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", @"Register", nil];
@@ -163,7 +155,7 @@
     [super dealloc];
 }
 
--(void)setUploadFolderModel:(BoxFolderModel*)folderModel {
+-(void)setUploadFolderModel:(BoxFolder*)folderModel {
 	
 	_folderModel = [folderModel retain];
 	[self.tableView reloadData];

@@ -1,35 +1,83 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxLoginController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/8/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxLoginController.h"
+#import "BoxGetTicketOperation.h"
 
+typedef enum _BoxLoginErrorType {
+	BoxLoginLogoutErrorTypeNoError = 0,
+	BoxLoginLogoutErrorTypeConnectionError,
+	BoxLoginLogoutErrorTypePasswordOrLoginError,
+	BoxLoginLogoutErrorTypeDeveloperAccountError // This error occurs when your API key is invalid or you don't have permission to access the direct login method. If this gets returned, ensure that you've copied your API key correctly and then please contact developers@box.net
+} BoxLoginErrorType;
 
 @implementation BoxLoginController
 
-//@synthesize labelDelegate = _labelDelegate;
+@synthesize boxFlipViewController = _flipViewController;
+
+#pragma mark Initialization and Memory
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        _flipViewController = nil;
+		_loginBuilder = nil;
+    }
+    return self;
+}
+
+- (void)dealloc {
+	
+	[_loginBuilder release];
+	
+    [super dealloc];
+}
+
+- (void)viewWillAppear {
+	[_loginView setHidden:NO];
+}
 
 #pragma mark Interface Actions
 
+-(IBAction) didPressLoginButton:(id)sender {
+	
+	[NSThread detachNewThreadSelector:@selector(doLoginAction) toTarget:self withObject:nil];
+	
+}
+
+-(IBAction) didPressRegisterButton:(id)sender {
+	[_flipViewController doFlipAction];
+}
+
+#pragma mark Logging In and Out
+
+-(void)doLoginAction {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	
+	if (!_loginBuilder) {
+		_loginBuilder = [[BoxLoginBuilder alloc] initWithWebview:_webView delegate:self];
+	}
+	
+	[_loginBuilder startLoginProcess];
+	
+	[pool release];
+}
+
 -(void)returnFromLoginAction:(NSNumber*)loginErr {
 	BoxLoginErrorType err = [loginErr intValue];
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
+	BoxUser * userModel = [BoxUser savedUser];
 	
 	[_flipViewController endSpinnerOverlay];
 	
@@ -54,122 +102,58 @@
 	
 }
 
--(void)doLoginAction:(NSDictionary*)userNameAndPassword {
-	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	NSString * userName = [userNameAndPassword objectForKey:@"userName"];
-	NSString * password = [userNameAndPassword objectForKey:@"password"];
-	BoxLoginErrorType err;
-
-	// Do the login action
-	BoxUserModel * userModel = [BoxLoginModelXMLBuilder loginUser:userName password:password andError:&err];
-	
-	// Get the auth token
-	NSString * ticket = userModel.authToken;
- 
-	if(!ticket) {
-		NSLog(@"Unable to login. Exiting...");
-		[self performSelectorOnMainThread:@selector(returnFromLoginAction:) withObject:[NSNumber numberWithInt:err] waitUntilDone:NO];
-		[pool release];
-		return;
-	}
-	NSLog(@"User Token: %@", ticket);
-	
-	NSLog(@"You've logged in successfully as %@", userModel.userName);
-	
-	// Save out this user model to be accessed later
-	[userModel saveUserInformation];
-	
-	[self performSelectorOnMainThread:@selector(returnFromLoginAction:) withObject:[NSNumber numberWithInt:err] waitUntilDone:NO];	
-	[pool release];
-}
-
--(IBAction) didPressLoginButton:(id)sender {
-	if([userNameField.text compare:@""] == NSOrderedSame) {
-		//popup an error message
-		[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please enter a username to login" andDelegate:nil];
-		return;
-	}
-	if([passwordField.text compare:@""] == NSOrderedSame) {
-		// popup an error message
-		[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please enter a password to login" andDelegate:nil];
-		return;
-	}
-
-	[_flipViewController startSpinnerOverlay];
-	
-	[NSThread detachNewThreadSelector:@selector(doLoginAction:) toTarget:self withObject:[NSDictionary 
-							  dictionaryWithObjects:[NSArray arrayWithObjects:[[userNameField.text copy] autorelease], [[passwordField.text copy] autorelease], nil]
-																						  forKeys:[NSArray arrayWithObjects:@"userName", @"password", nil]]];
-	
-}
-
--(IBAction) didPressRegisterButton:(id)sender {
-	[_flipViewController doFlipAction];
-}
-
-#pragma mark UITextFieldDelegate methods
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-	if(textField == userNameField) {
-		[userNameField resignFirstResponder];
-		[passwordField becomeFirstResponder];
-	}
-	if(textField == passwordField) {
-		[passwordField resignFirstResponder];
-
-		[self didPressLoginButton:textField];
-	}
-	return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-	_scrollView.frame = CGRectMake(0, 0, 320, 480-216);
-	_scrollView.contentSize = CGSizeMake(320, 400);
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-	_scrollView.frame = CGRectMake(0, 0, 320, 480);	
-}
-
-
-#pragma mark UIViewController functions
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        _flipViewController = nil;
-    }
-    return self;
-}
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    [super dealloc];
-}
-
--(void)setBoxFlipViewController:(BoxFlipViewController*)flipController {
-	_flipViewController = [flipController retain];
-}
-
 #pragma mark UIAlertViewDelegate methods
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
 }
+
+#pragma mark -
+#pragma mark BoxLoginBuilder delegate methods
+
+- (void)loginCompletedWithUser:(BoxUser *)user {
+	
+	[BoxCommonUISetup popupAlertWithTitle:@"Login successful" andText:[NSString stringWithFormat:@"You've logged in successfully as %@", user.userName] andDelegate:nil];
+	[user save];
+	[_flipViewController.navigationController popViewControllerAnimated:YES];
+
+}
+
+- (void)loginFailedWithError:(BoxLoginBuilderResponseType)response {
+	
+	[_flipViewController endSpinnerOverlay];
+	[_loginView setHidden:NO];
+	
+	switch (response) {
+		case BoxLoginBuilderResponseTypeFailed:
+			[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please check your internet connection and try again" andDelegate:nil];
+			break;
+			/*
+		case BoxLoginLogoutErrorTypeConnectionError:
+			[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please check your internet connection and try again" andDelegate:nil];
+			break;
+		case BoxLoginLogoutErrorTypePasswordOrLoginError:
+			[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please check your username and password and try again" andDelegate:nil];
+			break;
+		case BoxLoginLogoutErrorTypeDeveloperAccountError:
+			[BoxCommonUISetup popupAlertWithTitle:@"Unable to login" andText:@"Please check your box.net developer account credentials. Either the application key is invalid or it does not have permission to call the direct-login method. Please contact developers@box.net" andDelegate:nil];
+			break;*/
+		default:
+			break;
+	}
+
+}
+
+- (void)startActivityIndicator {
+	
+	[_loginView setHidden:YES];
+	
+	[_flipViewController startSpinnerOverlay];
+}
+
+- (void)stopActivityIndicator {
+	
+	[_flipViewController endSpinnerOverlay];
+}
+
 
 @end

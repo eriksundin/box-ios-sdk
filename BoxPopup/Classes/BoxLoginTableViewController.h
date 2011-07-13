@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxLoginTableViewController.h
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/8/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 /*
@@ -28,12 +24,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BoxLoginController.h"
-#import "BoxUserModel.h"
+#import "BoxUser.h"
 #import "BoxFolderChooserTableViewController.h"
-#import "BoxFolderModel.h"
+#import "BoxFolder.h"
 #import "BoxFlipViewController.h"
 #import "BoxRegisterViewController.h"
-#import "BoxFolderModel+SaveableFolder.h"
+#import "BoxFolder+SaveableFolder.h"
 
 @interface BoxLoginTableViewController : UITableViewController <BoxFolderRetrievalCallback, UIAlertViewDelegate>{
 	IBOutlet UITableViewCell * _userNameCell;
@@ -45,11 +41,11 @@
 	
 	UINavigationController	 * _navigationController;
 	
-	BoxFolderModel			 *  _folderModel;
+	BoxFolder			 *  _folderModel;
 }
 
 @property (nonatomic,retain) UINavigationController * navigationController;
-@property (nonatomic,retain) BoxFolderModel * folderModel;
+@property (nonatomic,retain) BoxFolder * folderModel;
 
 
 @end

@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxFlipViewController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/11/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxFlipViewController.h"
@@ -27,9 +23,8 @@
 @synthesize sectionTitleLabel = _sectionTitleLabel;
 
 - (void)doLogoutAction {
-	BoxUserModel * userModel = [[[BoxUserModel alloc] init] autorelease];
-	[userModel clearUserModel];
-	[BoxFolderModel clearSavedFolder];
+	[BoxUser clearSavedUser];
+	[BoxFolder clearSavedFolder];
 	NSLog(@"Cleared saved folder");
 	self.navigationItem.rightBarButtonItem = nil;
 	
@@ -59,8 +54,8 @@
 	[_contentView addSubview:_currentController.view];
 	self.parentViewController.view.backgroundColor = [UIColor blackColor];
 	[BoxCommonUISetup formatNavigationBarWithBoxIconAndColorScheme:self.navigationController andNavItem:self.navigationItem];
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
-	if(userModel.authToken == nil || [userModel.authToken compare:@""] == NSOrderedSame) {
+	BoxUser * userModel = [BoxUser savedUser];
+	if (![userModel loggedIn]) {
 		_sectionTitleLabel.text = @"Please login or register to upload your file";
 	}
 	else {
@@ -100,7 +95,6 @@
 
 }
 -(void)endSpinnerOverlay{
-//	[activityIndicator stopAnimating];
 	[_spinnerOverlay stopSpinner];
 	[_spinnerOverlay.view removeFromSuperview];
 

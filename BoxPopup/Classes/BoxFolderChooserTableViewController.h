@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  FolderChooserTableViewController.h
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/9/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 /*
@@ -24,18 +20,18 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "BoxUserModel.h"
-#import "BoxFolderModel.h"
-#import "BoxObjectModel.h"
+#import "BoxUser.h"
+#import "BoxFolder.h"
+#import "BoxObject.h"
 #import "BoxFolderXMLBuilder.h"
 #import "BoxCommonUISetup.h"
-#import "BoxFolderModel+SaveableFolder.h"
+#import "BoxFolder+SaveableFolder.h"
 
 @protocol BoxFolderRetrievalCallback;
 
 @interface BoxFolderChooserTableViewController : UITableViewController {
 	UIActivityIndicatorView * _activityIndicator;
-	BoxFolderModel * _folderModel;
+	BoxFolder * _folderModel;
 	
 	id<BoxFolderRetrievalCallback> _filePathSelectorDelegate;
 }
@@ -46,6 +42,6 @@
 
 @protocol BoxFolderRetrievalCallback
 
--(void)setUploadFolderModel:(BoxFolderModel*)folderModel;
+-(void)setUploadFolderModel:(BoxFolder*)folderModel;
 
 @end

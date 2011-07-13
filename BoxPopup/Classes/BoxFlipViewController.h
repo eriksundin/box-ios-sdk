@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxFlipViewController.h
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/11/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 /*
@@ -27,9 +23,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BoxCommonUISetup.h"
-#import "BoxUserModel.h"
+#import "BoxUser.h"
 #import "BoxSpinnerOverlayViewController.h"
-#import "BoxFolderModel+SaveableFolder.h"
+#import "BoxFolder+SaveableFolder.h"
 
 @protocol BoxFlipViewCompatible;
 
@@ -49,7 +45,6 @@
 @property (readonly) UIView  * sectionTitleView;
 @property (readonly) UILabel * sectionTitleLabel;
 
-// We have this primaryControllerFirst Bool, because we want the flip to always go the same way between register and login
 - (id) initWithNibName:(NSString*)name andBundle:(NSBundle*)bundle andInitialController:(UIViewController <BoxFlipViewCompatible> *)controller1 andSecondaryController:(UIViewController <BoxFlipViewCompatible> *)controller2 andPrimaryControllerFirst:(BOOL)first;
 
 -(void)doFlipAction;

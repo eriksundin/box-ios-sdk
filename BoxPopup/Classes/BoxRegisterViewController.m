@@ -1,27 +1,41 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxRegisterViewController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/11/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxRegisterViewController.h"
-
+#import "BoxRegisterOperation.h"
 
 @implementation BoxRegisterViewController
+
+#pragma mark Initialization and memory
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+		_flipViewController = nil;
+		_registerOperation = nil;
+    }
+    return self;
+}
+
+
+- (void)dealloc {
+	[_flipViewController release];
+	[_registerOperation release];
+	
+    [super dealloc];
+}
 
 #pragma mark UITextFieldDelegate methods
 
@@ -55,24 +69,26 @@
 
 #pragma mark UI Actions
 
--(void)returnFromRegisterAction:(NSNumber*)registerErr {
-	BoxRegisterResponseType err = [registerErr intValue];
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
+-(void)returnFromRegisterAction:(BoxOperationResponse)registerResponse {
 	
 	[_flipViewController endSpinnerOverlay];	
 	
-	switch (err) {
-		case boxRegisterResponseTypeEmailExists:
-			[BoxCommonUISetup popupAlertWithTitle:@"Registration Unsuccessful" andText:[NSString stringWithFormat:@"The email address %@ is already registered. You can login with this address or enter another to register", _emailAddressField.text] andDelegate:nil];
+	NSLog(@"got register response %d", registerResponse);
+	switch (registerResponse) {
+		case BoxOperationResponseAlreadyRegistered:
+			[BoxCommonUISetup popupAlertWithTitle:@"Registration Unsuccessful" andText:[NSString stringWithFormat:@"The email address %@ is already registered.  You can simply login with it.", _emailAddressField.text] andDelegate:nil];
 			break;
-		case boxRegisterResponseTypeEmailInvalid:
+		case BoxOperationResponseInvalidName:
 			[BoxCommonUISetup popupAlertWithTitle:@"Registration Unsuccessful" andText:[NSString stringWithFormat:@"Please check that you have entered a valid email address"] andDelegate:nil];
 			break;
-		case boxRegisterResponseTypeUnknownError:
+		case BoxOperationResponseUnknownError:
 			[BoxCommonUISetup popupAlertWithTitle:@"Registration Unsuccessful" andText:[NSString stringWithFormat:@"There was an error in registration, please check your internet connection and try again"] andDelegate:nil];
 			break;
-		case boxRegisterResponseTypeSuccess:
-			[BoxCommonUISetup popupAlertWithTitle:@"Success" andText:[NSString stringWithFormat:@"You have successfully registered as %@", userModel.userName] andDelegate:nil];
+		case BoxOperationResponseInternalAPIError:
+			[BoxCommonUISetup popupAlertWithTitle:@"Registration Unsuccessful" andText:[NSString stringWithFormat:@"Please check the API key used for this app - there seems to be an issue with it.  Contact developers@box.net if you have more questions."] andDelegate:nil];
+			break;
+		case BoxOperationResponseSuccessful:
+			[BoxCommonUISetup popupAlertWithTitle:@"Success" andText:[NSString stringWithFormat:@"You have successfully registered!"] andDelegate:nil];
 			[self.navigationController popViewControllerAnimated:YES];
 			break;
 		default:
@@ -86,15 +102,10 @@
 	NSString * userName = [userNameAndPassword objectForKey:@"userName"];
 	NSString * password = [userNameAndPassword objectForKey:@"password"];
 	
-	BoxRegisterResponseType responseType;
-	BoxUserModel * userModel = [BoxRegistrationXMLBuilder doUserRegistration:userName andPassword:password andUploadResponseType:&responseType];
-	if([userModel userIsLoggedIn]) {
-		[userModel saveUserInformation];
-		// registration success
-	}
-	
-	[self performSelectorOnMainThread:@selector(returnFromRegisterAction:) withObject:[NSNumber numberWithInt:responseType] waitUntilDone:NO];	
-	
+	[_registerOperation release];
+	_registerOperation = [[BoxRegisterOperation alloc] initForLogin:userName password:password delegate:self];
+	[_registerOperation start];
+		
 	[pool release];
 }
 
@@ -127,45 +138,22 @@
 	[_flipViewController doFlipAction];
 }
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		_flipViewController = nil;
-		
-    }
-    return self;
+#pragma mark -
+#pragma mark BoxOperationDelegate functions
+
+- (void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
+	if ([op isEqual:_registerOperation]) {
+		// store the usermodel
+		[_registerOperation.user save];
+		[self returnFromRegisterAction:response];
+	}
 }
 
+#pragma mark -
+#pragma mark FlipViewController compatible functions
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)setBoxFlipViewController:(BoxFlipViewController *)flipController {
+	_flipViewController = flipController;
 }
-
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    [super dealloc];
-	if(_flipViewController)
-		[_flipViewController release];
-}
-
--(void)setBoxFlipViewController:(BoxFlipViewController*)flipController {
-	_flipViewController = [flipController retain];
-}
-
 
 @end

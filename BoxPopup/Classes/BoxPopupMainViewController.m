@@ -1,21 +1,17 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  BoxPopupMainViewController.m
-//  BoxPopup
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Created by Michael Smith on 9/7/09.
-//  Copyright 2009 Box.net.
-//  
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-//  See the License for the specific language governing permissions and 
-//  limitations under the License. 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #import "BoxPopupMainViewController.h"
@@ -27,7 +23,7 @@
 
 
 -(NSString*)getCurrentFolderPath {
-	BoxFolderModel * folderModel = [BoxFolderModel retrieveSavedFolder];
+	BoxFolder * folderModel = [BoxFolder savedFolder];
 	if(folderModel == nil) 
 		return @"/All Files";
 	else
@@ -35,7 +31,6 @@
 	
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[BoxCommonUISetup formatNavigationBarWithBoxIconAndColorScheme:self.navigationController andNavItem:self.navigationItem];
@@ -98,9 +93,8 @@
 	NSLog(@"View Will Appear: BoxPopupMainViewController");
 	[super viewWillAppear:animated];
 	[_loginTableViewController viewWillAppear:animated];
-	BoxUserModel * userModel = [[[BoxUserModel alloc] init] autorelease];
-	BOOL dictExists = [userModel populateFromSavedDictionary];
-	if(!dictExists || userModel.authToken == nil || [userModel.authToken compare:@""] == NSOrderedSame) {
+	BoxUser * userModel = [BoxUser savedUser];
+	if(![userModel loggedIn]) {
 		_navInfoLabel.text = @"Please login to Box.net to upload your file";
 	}
 	else {
@@ -316,9 +310,9 @@
 	NSString * message = [dict objectForKey:@"message"];
 	NSArray  * emails = [dict objectForKey:@"emails"];
 	
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
+	BoxUser * userModel = [BoxUser savedUser];
 	
-	BoxUploadResponseType uploadResponse = [BoxHTTPRequestBuilders doAdvancedUpload:userModel andTargetFolderId:folderId andData:data andFilename:fileName andContentType:dataContentType andShouldshare:shouldShare andMessage:message andEmails:emails];
+	BoxUploadResponseType uploadResponse = [BoxHTTPRequestBuilders advancedUploadForUser:userModel targetFolderId:folderId data:data filename:fileName contentType:dataContentType shouldshare:shouldShare message:message emails:emails];
 	
 	[self performSelectorOnMainThread:@selector(returnFromUpload:) withObject:[NSNumber numberWithInt:uploadResponse] waitUntilDone:NO];
 	
@@ -329,8 +323,8 @@
 -(IBAction) uploadAction:(id)sender {
 	NSLog(@"Upload Action");
 	
-	BoxUserModel * userModel = [BoxUserModel userModelFromLocalStorage];
-	if(![userModel userIsLoggedIn]) {
+	BoxUser * userModel = [BoxUser savedUser];
+	if(![userModel loggedIn]) {
 		UIAlertView *alert;
 		alert = [[UIAlertView alloc] initWithTitle:@"Please Login or Register" message:@"Login to your Box.net account or register to upload your files"
 										  delegate:_loginTableViewController cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", @"Register", nil];

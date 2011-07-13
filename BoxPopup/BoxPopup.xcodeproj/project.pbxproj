@@ -13,26 +13,59 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		489C1C2913CE4E0400F01C1F /* BoxLoginBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 489C1C2713CE4E0400F01C1F /* BoxLoginBuilder.m */; };
+		48DE61B913CE4CBE0047DFC7 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE616E13CE4CBE0047DFC7 /* GTMRegex.m */; };
+		48DE61BA13CE4CBE0047DFC7 /* BoxModelUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617113CE4CBE0047DFC7 /* BoxModelUtilityFunctions.m */; };
+		48DE61BB13CE4CBE0047DFC7 /* NSArray+BoxUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617313CE4CBE0047DFC7 /* NSArray+BoxUtils.m */; };
+		48DE61BC13CE4CBE0047DFC7 /* NSDictionaryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617513CE4CBE0047DFC7 /* NSDictionaryXMLParser.m */; };
+		48DE61BD13CE4CBE0047DFC7 /* BoxComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617813CE4CBE0047DFC7 /* BoxComment.m */; };
+		48DE61BE13CE4CBE0047DFC7 /* BoxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617A13CE4CBE0047DFC7 /* BoxFile.m */; };
+		48DE61BF13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617C13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.m */; };
+		48DE61C013CE4CBE0047DFC7 /* BoxFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE617E13CE4CBE0047DFC7 /* BoxFolder.m */; };
+		48DE61C113CE4CBE0047DFC7 /* BoxObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618013CE4CBE0047DFC7 /* BoxObject.m */; };
+		48DE61C213CE4CBE0047DFC7 /* BoxRESTApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618213CE4CBE0047DFC7 /* BoxRESTApiFactory.m */; };
+		48DE61C313CE4CBE0047DFC7 /* BoxUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618413CE4CBE0047DFC7 /* BoxUpdate.m */; };
+		48DE61C413CE4CBE0047DFC7 /* BoxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618613CE4CBE0047DFC7 /* BoxUser.m */; };
+		48DE61C513CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618913CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.m */; };
+		48DE61C613CE4CBE0047DFC7 /* BoxFolderXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618B13CE4CBE0047DFC7 /* BoxFolderXMLBuilder.m */; };
+		48DE61C713CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618D13CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.m */; };
+		48DE61C813CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE618F13CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.m */; };
+		48DE61C913CE4CBE0047DFC7 /* BoxAddCommentsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619213CE4CBE0047DFC7 /* BoxAddCommentsOperation.m */; };
+		48DE61CA13CE4CBE0047DFC7 /* BoxAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619413CE4CBE0047DFC7 /* BoxAPIOperation.m */; };
+		48DE61CB13CE4CBE0047DFC7 /* BoxCopyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619613CE4CBE0047DFC7 /* BoxCopyOperation.m */; };
+		48DE61CC13CE4CBE0047DFC7 /* BoxCreateFolderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619813CE4CBE0047DFC7 /* BoxCreateFolderOperation.m */; };
+		48DE61CD13CE4CBE0047DFC7 /* BoxDeleteCommentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619A13CE4CBE0047DFC7 /* BoxDeleteCommentOperation.m */; };
+		48DE61CE13CE4CBE0047DFC7 /* BoxDeleteOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619C13CE4CBE0047DFC7 /* BoxDeleteOperation.m */; };
+		48DE61CF13CE4CBE0047DFC7 /* BoxDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE619E13CE4CBE0047DFC7 /* BoxDownloadOperation.m */; };
+		48DE61D013CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61A013CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.m */; };
+		48DE61D113CE4CBE0047DFC7 /* BoxGetCommentsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61A213CE4CBE0047DFC7 /* BoxGetCommentsOperation.m */; };
+		48DE61D213CE4CBE0047DFC7 /* BoxGetTicketOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61A413CE4CBE0047DFC7 /* BoxGetTicketOperation.m */; };
+		48DE61D313CE4CBE0047DFC7 /* BoxGetUpdatesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61A613CE4CBE0047DFC7 /* BoxGetUpdatesOperation.m */; };
+		48DE61D413CE4CBE0047DFC7 /* BoxMoveOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61A813CE4CBE0047DFC7 /* BoxMoveOperation.m */; };
+		48DE61D513CE4CBE0047DFC7 /* BoxNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61AA13CE4CBE0047DFC7 /* BoxNetworkOperation.m */; };
+		48DE61D613CE4CBE0047DFC7 /* BoxOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61AC13CE4CBE0047DFC7 /* BoxOperation.m */; };
+		48DE61D713CE4CBE0047DFC7 /* BoxPrivateShareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61AE13CE4CBE0047DFC7 /* BoxPrivateShareOperation.m */; };
+		48DE61D813CE4CBE0047DFC7 /* BoxPublicShareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61B013CE4CBE0047DFC7 /* BoxPublicShareOperation.m */; };
+		48DE61D913CE4CBE0047DFC7 /* BoxPublicUnshareOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61B213CE4CBE0047DFC7 /* BoxPublicUnshareOperation.m */; };
+		48DE61DA13CE4CBE0047DFC7 /* BoxRegisterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61B413CE4CBE0047DFC7 /* BoxRegisterOperation.m */; };
+		48DE61DB13CE4CBE0047DFC7 /* BoxRenameOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61B613CE4CBE0047DFC7 /* BoxRenameOperation.m */; };
+		48DE61DC13CE4CBE0047DFC7 /* BoxUploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DE61B813CE4CBE0047DFC7 /* BoxUploadOperation.m */; };
+		48E25F7413CE19710007E27C /* BoxRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25F7313CE19710007E27C /* BoxRegisterViewController.m */; };
+		48E25F7A13CE19850007E27C /* BoxFlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25F7913CE19850007E27C /* BoxFlipViewController.m */; };
+		48E25F7D13CE199A0007E27C /* BoxLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25F7C13CE199A0007E27C /* BoxLoginController.m */; };
+		48E25F8113CE19DE0007E27C /* BoxFlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E25F7E13CE19DE0007E27C /* BoxFlipViewController.xib */; };
+		48E25F8213CE19DE0007E27C /* BoxLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E25F7F13CE19DE0007E27C /* BoxLoginView.xib */; };
+		48E25F8313CE19DE0007E27C /* BoxRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E25F8013CE19DE0007E27C /* BoxRegisterView.xib */; };
 		640BA0C910619734003666D4 /* Simple Word Doc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 640BA0C810619734003666D4 /* Simple Word Doc.docx */; };
 		640BA0D6106197B7003666D4 /* Simple Text Format.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 640BA0D5106197B7003666D4 /* Simple Text Format.rtf */; };
 		640BA21F106235E9003666D4 /* BoxSectionBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 640BA21E106235E9003666D4 /* BoxSectionBarBackground.png */; };
 		640BA4B81062E606003666D4 /* BoxLoginFormField.gif in Resources */ = {isa = PBXBuildFile; fileRef = 640BA4B71062E606003666D4 /* BoxLoginFormField.gif */; };
 		642343721055B04A001AD6BF /* BoxPopupMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343711055B04A001AD6BF /* BoxPopupMainViewController.m */; };
 		642343751055B0F8001AD6BF /* BoxPopupMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642343741055B0F8001AD6BF /* BoxPopupMainView.xib */; };
-		642343CB1056D2AF001AD6BF /* BoxLoginModelXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343B91056D2AF001AD6BF /* BoxLoginModelXMLBuilder.m */; };
-		642343CC1056D2AF001AD6BF /* BoxFolderXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343BB1056D2AF001AD6BF /* BoxFolderXMLBuilder.m */; };
-		642343CD1056D2AF001AD6BF /* BoxHTTPRequestBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343BD1056D2AF001AD6BF /* BoxHTTPRequestBuilders.m */; };
-		642343CE1056D2AF001AD6BF /* BoxModelUtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343C11056D2AF001AD6BF /* BoxModelUtilityFunctions.m */; };
-		642343CF1056D2AF001AD6BF /* BoxUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343C31056D2AF001AD6BF /* BoxUserModel.m */; };
-		642343D01056D2AF001AD6BF /* BoxObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343C51056D2AF001AD6BF /* BoxObjectModel.m */; };
-		642343D11056D2AF001AD6BF /* BoxFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343C71056D2AF001AD6BF /* BoxFileModel.m */; };
-		642343D21056D2AF001AD6BF /* BoxFolderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 642343C91056D2AF001AD6BF /* BoxFolderModel.m */; };
 		64234488105704F6001AD6BF /* BoxPopupExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64234486105704F6001AD6BF /* BoxPopupExampleController.m */; };
 		64234489105704F6001AD6BF /* BoxPopupExampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64234487105704F6001AD6BF /* BoxPopupExampleView.xib */; };
 		642344E510571969001AD6BF /* BoxPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642344E310571969001AD6BF /* BoxPopupController.m */; };
 		642344E610571969001AD6BF /* BoxPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642344E410571969001AD6BF /* BoxPopupController.xib */; };
-		6423456C10571E23001AD6BF /* BoxLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6423456A10571E23001AD6BF /* BoxLoginController.m */; };
-		6423459110572202001AD6BF /* BoxLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6423459010572202001AD6BF /* BoxLoginView.xib */; };
 		642345951057224E001AD6BF /* BoxSmallButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 642345941057224E001AD6BF /* BoxSmallButtonImage.png */; };
 		6423459A10572392001AD6BF /* BoxCommonUISetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6423459910572392001AD6BF /* BoxCommonUISetup.m */; };
 		6423459C105723B1001AD6BF /* BoxTopBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6423459B105723B1001AD6BF /* BoxTopBarLogo.png */; };
@@ -47,22 +80,14 @@
 		64234B5610585150001AD6BF /* BoxFolderChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64234B5510585150001AD6BF /* BoxFolderChooserTableViewController.m */; };
 		64234CAF1058669B001AD6BF /* BoxBoxLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 64234CAE1058669B001AD6BF /* BoxBoxLogo.gif */; };
 		64234D06105869D4001AD6BF /* BoxCollabFolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 64234D05105869D4001AD6BF /* BoxCollabFolder.png */; };
-		64532D5A105AD80F00EF734D /* BoxFlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64532D58105AD80F00EF734D /* BoxFlipViewController.m */; };
-		64532D5B105AD80F00EF734D /* BoxFlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64532D59105AD80F00EF734D /* BoxFlipViewController.xib */; };
-		64532E1E105B049100EF734D /* BoxRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64532E1C105B049100EF734D /* BoxRegisterViewController.m */; };
-		64532E1F105B049100EF734D /* BoxRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64532E1D105B049100EF734D /* BoxRegisterView.xib */; };
 		64532E22105B063600EF734D /* BoxRegistrationFields-old.png in Resources */ = {isa = PBXBuildFile; fileRef = 64532E21105B063600EF734D /* BoxRegistrationFields-old.png */; };
-		64532F33105B240900EF734D /* BoxRegistrationXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 64532F32105B240900EF734D /* BoxRegistrationXMLBuilder.m */; };
 		647166FB105F79C3004A9B26 /* BoxRegistrationFields.png in Resources */ = {isa = PBXBuildFile; fileRef = 647166FA105F79C3004A9B26 /* BoxRegistrationFields.png */; };
 		647167D210601F97004A9B26 /* BoxSpinnerOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647167D110601F97004A9B26 /* BoxSpinnerOverlayView.xib */; };
 		6471681C10602883004A9B26 /* BoxSpinnerOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6471681A10602883004A9B26 /* BoxSpinnerOverlayViewController.m */; };
-		647169D610606AA3004A9B26 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 647169D410606AA3004A9B26 /* GTMRegex.m */; };
 		64716A241060818A004A9B26 /* BoxLoginTableViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 64716A231060818A004A9B26 /* BoxLoginTableViewBackground.png */; };
 		64716A2C106083C3004A9B26 /* BoxDocumentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64716A2B106083C3004A9B26 /* BoxDocumentIcon.png */; };
-		64716AC81060CC39004A9B26 /* BoxFolderModel+SaveableFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 64716AC71060CC39004A9B26 /* BoxFolderModel+SaveableFolder.m */; };
 		64716CF910617C26004A9B26 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64716CF010617C08004A9B26 /* AddressBook.framework */; };
 		64716CFA10617C26004A9B26 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64716CF210617C08004A9B26 /* AddressBookUI.framework */; };
-		6479B45A1059B2BB00EAC3F0 /* BoxRESTApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6479B4591059B2BB00EAC3F0 /* BoxRESTApiFactory.m */; };
 		6497E523107B0247000AC9BC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6497E522107B0247000AC9BC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -76,39 +101,103 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* BoxPopup_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopup_Prefix.pch; sourceTree = "<group>"; };
+		489C1C2713CE4E0400F01C1F /* BoxLoginBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxLoginBuilder.m; path = ../../BoxAPI/Classes/Controllers/BoxLoginBuilder.m; sourceTree = "<group>"; };
+		489C1C2813CE4E0400F01C1F /* BoxLoginBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxLoginBuilder.h; path = ../../BoxAPI/Classes/Controllers/BoxLoginBuilder.h; sourceTree = "<group>"; };
+		48DE616C13CE4CBE0047DFC7 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		48DE616D13CE4CBE0047DFC7 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
+		48DE616E13CE4CBE0047DFC7 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
+		48DE617013CE4CBE0047DFC7 /* BoxModelUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxModelUtilityFunctions.h; sourceTree = "<group>"; };
+		48DE617113CE4CBE0047DFC7 /* BoxModelUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxModelUtilityFunctions.m; sourceTree = "<group>"; };
+		48DE617213CE4CBE0047DFC7 /* NSArray+BoxUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BoxUtils.h"; sourceTree = "<group>"; };
+		48DE617313CE4CBE0047DFC7 /* NSArray+BoxUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BoxUtils.m"; sourceTree = "<group>"; };
+		48DE617413CE4CBE0047DFC7 /* NSDictionaryXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryXMLParser.h; sourceTree = "<group>"; };
+		48DE617513CE4CBE0047DFC7 /* NSDictionaryXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryXMLParser.m; sourceTree = "<group>"; };
+		48DE617713CE4CBE0047DFC7 /* BoxComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxComment.h; sourceTree = "<group>"; };
+		48DE617813CE4CBE0047DFC7 /* BoxComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxComment.m; sourceTree = "<group>"; };
+		48DE617913CE4CBE0047DFC7 /* BoxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFile.h; sourceTree = "<group>"; };
+		48DE617A13CE4CBE0047DFC7 /* BoxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFile.m; sourceTree = "<group>"; };
+		48DE617B13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BoxFolder+SaveableFolder.h"; sourceTree = "<group>"; };
+		48DE617C13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BoxFolder+SaveableFolder.m"; sourceTree = "<group>"; };
+		48DE617D13CE4CBE0047DFC7 /* BoxFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolder.h; sourceTree = "<group>"; };
+		48DE617E13CE4CBE0047DFC7 /* BoxFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolder.m; sourceTree = "<group>"; };
+		48DE617F13CE4CBE0047DFC7 /* BoxObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxObject.h; sourceTree = "<group>"; };
+		48DE618013CE4CBE0047DFC7 /* BoxObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxObject.m; sourceTree = "<group>"; };
+		48DE618113CE4CBE0047DFC7 /* BoxRESTApiFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRESTApiFactory.h; sourceTree = "<group>"; };
+		48DE618213CE4CBE0047DFC7 /* BoxRESTApiFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRESTApiFactory.m; sourceTree = "<group>"; };
+		48DE618313CE4CBE0047DFC7 /* BoxUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUpdate.h; sourceTree = "<group>"; };
+		48DE618413CE4CBE0047DFC7 /* BoxUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUpdate.m; sourceTree = "<group>"; };
+		48DE618513CE4CBE0047DFC7 /* BoxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUser.h; sourceTree = "<group>"; };
+		48DE618613CE4CBE0047DFC7 /* BoxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUser.m; sourceTree = "<group>"; };
+		48DE618813CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCommentsListModelXMLBuilder.h; sourceTree = "<group>"; };
+		48DE618913CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCommentsListModelXMLBuilder.m; sourceTree = "<group>"; };
+		48DE618A13CE4CBE0047DFC7 /* BoxFolderXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolderXMLBuilder.h; sourceTree = "<group>"; };
+		48DE618B13CE4CBE0047DFC7 /* BoxFolderXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolderXMLBuilder.m; sourceTree = "<group>"; };
+		48DE618C13CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxHTTPRequestBuilders.h; sourceTree = "<group>"; };
+		48DE618D13CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxHTTPRequestBuilders.m; sourceTree = "<group>"; };
+		48DE618E13CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUpdatesListModelXMLBuilder.h; sourceTree = "<group>"; };
+		48DE618F13CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUpdatesListModelXMLBuilder.m; sourceTree = "<group>"; };
+		48DE619113CE4CBE0047DFC7 /* BoxAddCommentsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAddCommentsOperation.h; sourceTree = "<group>"; };
+		48DE619213CE4CBE0047DFC7 /* BoxAddCommentsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAddCommentsOperation.m; sourceTree = "<group>"; };
+		48DE619313CE4CBE0047DFC7 /* BoxAPIOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAPIOperation.h; sourceTree = "<group>"; };
+		48DE619413CE4CBE0047DFC7 /* BoxAPIOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAPIOperation.m; sourceTree = "<group>"; };
+		48DE619513CE4CBE0047DFC7 /* BoxCopyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCopyOperation.h; sourceTree = "<group>"; };
+		48DE619613CE4CBE0047DFC7 /* BoxCopyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCopyOperation.m; sourceTree = "<group>"; };
+		48DE619713CE4CBE0047DFC7 /* BoxCreateFolderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCreateFolderOperation.h; sourceTree = "<group>"; };
+		48DE619813CE4CBE0047DFC7 /* BoxCreateFolderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCreateFolderOperation.m; sourceTree = "<group>"; };
+		48DE619913CE4CBE0047DFC7 /* BoxDeleteCommentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDeleteCommentOperation.h; sourceTree = "<group>"; };
+		48DE619A13CE4CBE0047DFC7 /* BoxDeleteCommentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDeleteCommentOperation.m; sourceTree = "<group>"; };
+		48DE619B13CE4CBE0047DFC7 /* BoxDeleteOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDeleteOperation.h; sourceTree = "<group>"; };
+		48DE619C13CE4CBE0047DFC7 /* BoxDeleteOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDeleteOperation.m; sourceTree = "<group>"; };
+		48DE619D13CE4CBE0047DFC7 /* BoxDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxDownloadOperation.h; sourceTree = "<group>"; };
+		48DE619E13CE4CBE0047DFC7 /* BoxDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxDownloadOperation.m; sourceTree = "<group>"; };
+		48DE619F13CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetAuthTokenOperation.h; sourceTree = "<group>"; };
+		48DE61A013CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetAuthTokenOperation.m; sourceTree = "<group>"; };
+		48DE61A113CE4CBE0047DFC7 /* BoxGetCommentsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetCommentsOperation.h; sourceTree = "<group>"; };
+		48DE61A213CE4CBE0047DFC7 /* BoxGetCommentsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetCommentsOperation.m; sourceTree = "<group>"; };
+		48DE61A313CE4CBE0047DFC7 /* BoxGetTicketOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetTicketOperation.h; sourceTree = "<group>"; };
+		48DE61A413CE4CBE0047DFC7 /* BoxGetTicketOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetTicketOperation.m; sourceTree = "<group>"; };
+		48DE61A513CE4CBE0047DFC7 /* BoxGetUpdatesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxGetUpdatesOperation.h; sourceTree = "<group>"; };
+		48DE61A613CE4CBE0047DFC7 /* BoxGetUpdatesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxGetUpdatesOperation.m; sourceTree = "<group>"; };
+		48DE61A713CE4CBE0047DFC7 /* BoxMoveOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxMoveOperation.h; sourceTree = "<group>"; };
+		48DE61A813CE4CBE0047DFC7 /* BoxMoveOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxMoveOperation.m; sourceTree = "<group>"; };
+		48DE61A913CE4CBE0047DFC7 /* BoxNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxNetworkOperation.h; sourceTree = "<group>"; };
+		48DE61AA13CE4CBE0047DFC7 /* BoxNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxNetworkOperation.m; sourceTree = "<group>"; };
+		48DE61AB13CE4CBE0047DFC7 /* BoxOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOperation.h; sourceTree = "<group>"; };
+		48DE61AC13CE4CBE0047DFC7 /* BoxOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOperation.m; sourceTree = "<group>"; };
+		48DE61AD13CE4CBE0047DFC7 /* BoxPrivateShareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPrivateShareOperation.h; sourceTree = "<group>"; };
+		48DE61AE13CE4CBE0047DFC7 /* BoxPrivateShareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPrivateShareOperation.m; sourceTree = "<group>"; };
+		48DE61AF13CE4CBE0047DFC7 /* BoxPublicShareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPublicShareOperation.h; sourceTree = "<group>"; };
+		48DE61B013CE4CBE0047DFC7 /* BoxPublicShareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPublicShareOperation.m; sourceTree = "<group>"; };
+		48DE61B113CE4CBE0047DFC7 /* BoxPublicUnshareOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPublicUnshareOperation.h; sourceTree = "<group>"; };
+		48DE61B213CE4CBE0047DFC7 /* BoxPublicUnshareOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPublicUnshareOperation.m; sourceTree = "<group>"; };
+		48DE61B313CE4CBE0047DFC7 /* BoxRegisterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRegisterOperation.h; sourceTree = "<group>"; };
+		48DE61B413CE4CBE0047DFC7 /* BoxRegisterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRegisterOperation.m; sourceTree = "<group>"; };
+		48DE61B513CE4CBE0047DFC7 /* BoxRenameOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRenameOperation.h; sourceTree = "<group>"; };
+		48DE61B613CE4CBE0047DFC7 /* BoxRenameOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRenameOperation.m; sourceTree = "<group>"; };
+		48DE61B713CE4CBE0047DFC7 /* BoxUploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUploadOperation.h; sourceTree = "<group>"; };
+		48DE61B813CE4CBE0047DFC7 /* BoxUploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUploadOperation.m; sourceTree = "<group>"; };
+		48E25F7213CE19710007E27C /* BoxRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRegisterViewController.h; sourceTree = "<group>"; };
+		48E25F7313CE19710007E27C /* BoxRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRegisterViewController.m; sourceTree = "<group>"; };
+		48E25F7813CE19850007E27C /* BoxFlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BoxFlipViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		48E25F7913CE19850007E27C /* BoxFlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BoxFlipViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		48E25F7B13CE199A0007E27C /* BoxLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginController.h; sourceTree = "<group>"; };
+		48E25F7C13CE199A0007E27C /* BoxLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginController.m; sourceTree = "<group>"; };
+		48E25F7E13CE19DE0007E27C /* BoxFlipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxFlipViewController.xib; sourceTree = "<group>"; };
+		48E25F7F13CE19DE0007E27C /* BoxLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxLoginView.xib; sourceTree = "<group>"; };
+		48E25F8013CE19DE0007E27C /* BoxRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxRegisterView.xib; sourceTree = "<group>"; };
 		640BA0C810619734003666D4 /* Simple Word Doc.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Simple Word Doc.docx"; sourceTree = "<group>"; };
 		640BA0D5106197B7003666D4 /* Simple Text Format.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Simple Text Format.rtf"; sourceTree = "<group>"; };
 		640BA21E106235E9003666D4 /* BoxSectionBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxSectionBarBackground.png; sourceTree = "<group>"; };
 		640BA4B71062E606003666D4 /* BoxLoginFormField.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BoxLoginFormField.gif; sourceTree = "<group>"; };
-		642343701055B04A001AD6BF /* BoxPopupMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopupMainViewController.h; sourceTree = "<group>"; };
-		642343711055B04A001AD6BF /* BoxPopupMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPopupMainViewController.m; sourceTree = "<group>"; };
+		642343701055B04A001AD6BF /* BoxPopupMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BoxPopupMainViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		642343711055B04A001AD6BF /* BoxPopupMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BoxPopupMainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		642343741055B0F8001AD6BF /* BoxPopupMainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BoxPopupMainView.xib; path = ../BoxPopupMainView.xib; sourceTree = "<group>"; };
-		642343B61056D2AF001AD6BF /* BoxRESTApiFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxRESTApiFactory.h; path = ../BoxCodeSamples/Classes/BoxRESTApiFactory.h; sourceTree = SOURCE_ROOT; };
-		642343B81056D2AF001AD6BF /* BoxLoginModelXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxLoginModelXMLBuilder.h; path = ../BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.h; sourceTree = SOURCE_ROOT; };
-		642343B91056D2AF001AD6BF /* BoxLoginModelXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxLoginModelXMLBuilder.m; path = ../BoxCodeSamples/Classes/BoxLoginModelXMLBuilder.m; sourceTree = SOURCE_ROOT; };
-		642343BA1056D2AF001AD6BF /* BoxFolderXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxFolderXMLBuilder.h; path = ../BoxCodeSamples/Classes/BoxFolderXMLBuilder.h; sourceTree = SOURCE_ROOT; };
-		642343BB1056D2AF001AD6BF /* BoxFolderXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxFolderXMLBuilder.m; path = ../BoxCodeSamples/Classes/BoxFolderXMLBuilder.m; sourceTree = SOURCE_ROOT; };
-		642343BC1056D2AF001AD6BF /* BoxHTTPRequestBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxHTTPRequestBuilders.h; path = ../BoxCodeSamples/Classes/BoxHTTPRequestBuilders.h; sourceTree = SOURCE_ROOT; };
-		642343BD1056D2AF001AD6BF /* BoxHTTPRequestBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxHTTPRequestBuilders.m; path = ../BoxCodeSamples/Classes/BoxHTTPRequestBuilders.m; sourceTree = SOURCE_ROOT; };
-		642343C01056D2AF001AD6BF /* BoxModelUtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxModelUtilityFunctions.h; path = ../BoxCodeSamples/Classes/BoxModelUtilityFunctions.h; sourceTree = SOURCE_ROOT; };
-		642343C11056D2AF001AD6BF /* BoxModelUtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxModelUtilityFunctions.m; path = ../BoxCodeSamples/Classes/BoxModelUtilityFunctions.m; sourceTree = SOURCE_ROOT; };
-		642343C21056D2AF001AD6BF /* BoxUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxUserModel.h; path = ../BoxCodeSamples/Classes/BoxUserModel.h; sourceTree = SOURCE_ROOT; };
-		642343C31056D2AF001AD6BF /* BoxUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxUserModel.m; path = ../BoxCodeSamples/Classes/BoxUserModel.m; sourceTree = SOURCE_ROOT; };
-		642343C41056D2AF001AD6BF /* BoxObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxObjectModel.h; path = ../BoxCodeSamples/Classes/BoxObjectModel.h; sourceTree = SOURCE_ROOT; };
-		642343C51056D2AF001AD6BF /* BoxObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxObjectModel.m; path = ../BoxCodeSamples/Classes/BoxObjectModel.m; sourceTree = SOURCE_ROOT; };
-		642343C61056D2AF001AD6BF /* BoxFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxFileModel.h; path = ../BoxCodeSamples/Classes/BoxFileModel.h; sourceTree = SOURCE_ROOT; };
-		642343C71056D2AF001AD6BF /* BoxFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxFileModel.m; path = ../BoxCodeSamples/Classes/BoxFileModel.m; sourceTree = SOURCE_ROOT; };
-		642343C81056D2AF001AD6BF /* BoxFolderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxFolderModel.h; path = ../BoxCodeSamples/Classes/BoxFolderModel.h; sourceTree = SOURCE_ROOT; };
-		642343C91056D2AF001AD6BF /* BoxFolderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxFolderModel.m; path = ../BoxCodeSamples/Classes/BoxFolderModel.m; sourceTree = SOURCE_ROOT; };
 		64234485105704F6001AD6BF /* BoxPopupExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopupExampleController.h; sourceTree = "<group>"; };
 		64234486105704F6001AD6BF /* BoxPopupExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPopupExampleController.m; sourceTree = "<group>"; };
 		64234487105704F6001AD6BF /* BoxPopupExampleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BoxPopupExampleView.xib; path = Classes/BoxPopupExampleView.xib; sourceTree = "<group>"; };
 		642344E210571969001AD6BF /* BoxPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopupController.h; sourceTree = "<group>"; };
 		642344E310571969001AD6BF /* BoxPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxPopupController.m; sourceTree = "<group>"; };
 		642344E410571969001AD6BF /* BoxPopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxPopupController.xib; sourceTree = "<group>"; };
-		6423456910571E23001AD6BF /* BoxLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginController.h; sourceTree = "<group>"; };
-		6423456A10571E23001AD6BF /* BoxLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginController.m; sourceTree = "<group>"; };
-		6423459010572202001AD6BF /* BoxLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxLoginView.xib; sourceTree = "<group>"; };
 		642345941057224E001AD6BF /* BoxSmallButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxSmallButtonImage.png; sourceTree = "<group>"; };
 		6423459810572392001AD6BF /* BoxCommonUISetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCommonUISetup.h; sourceTree = "<group>"; };
 		6423459910572392001AD6BF /* BoxCommonUISetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCommonUISetup.m; sourceTree = "<group>"; };
@@ -116,42 +205,28 @@
 		6423459D1057246C001AD6BF /* BoxPopupConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopupConstants.h; sourceTree = "<group>"; };
 		642345A010572562001AD6BF /* BoxBlueGradientBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BoxBlueGradientBackground.gif; sourceTree = "<group>"; };
 		6423463310572D70001AD6BF /* BoxFolderIcon-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoxFolderIcon-old.png"; sourceTree = "<group>"; };
-		642346BD105733C2001AD6BF /* BoxLoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginTableViewController.h; sourceTree = "<group>"; };
-		642346BE105733C2001AD6BF /* BoxLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxLoginTableViewController.m; sourceTree = "<group>"; };
+		642346BD105733C2001AD6BF /* BoxLoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BoxLoginTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		642346BE105733C2001AD6BF /* BoxLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BoxLoginTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		642346C010573425001AD6BF /* BoxLoginTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxLoginTableView.xib; sourceTree = "<group>"; };
 		642348AD10573F51001AD6BF /* BoxUserIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxUserIcon.png; sourceTree = "<group>"; };
 		642348BC1057464F001AD6BF /* BoxFileInfoField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxFileInfoField.png; sourceTree = "<group>"; };
 		64234B06105849E9001AD6BF /* BoxFolderIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxFolderIcon.png; sourceTree = "<group>"; };
 		64234B2F10584D64001AD6BF /* BoxLargeButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxLargeButtonImage.png; sourceTree = "<group>"; };
-		64234B5410585150001AD6BF /* BoxFolderChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFolderChooserTableViewController.h; sourceTree = "<group>"; };
-		64234B5510585150001AD6BF /* BoxFolderChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFolderChooserTableViewController.m; sourceTree = "<group>"; };
+		64234B5410585150001AD6BF /* BoxFolderChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BoxFolderChooserTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		64234B5510585150001AD6BF /* BoxFolderChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BoxFolderChooserTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		64234B5F105856A1001AD6BF /* BoxFolderIconShared.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BoxFolderIconShared.gif; sourceTree = "<group>"; };
 		64234C9B1058650B001AD6BF /* BoxPopupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopupDelegate.h; sourceTree = "<group>"; };
 		64234CAE1058669B001AD6BF /* BoxBoxLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BoxBoxLogo.gif; sourceTree = "<group>"; };
 		64234D05105869D4001AD6BF /* BoxCollabFolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxCollabFolder.png; sourceTree = "<group>"; };
-		64532D57105AD80F00EF734D /* BoxFlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxFlipViewController.h; sourceTree = "<group>"; };
-		64532D58105AD80F00EF734D /* BoxFlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxFlipViewController.m; sourceTree = "<group>"; };
-		64532D59105AD80F00EF734D /* BoxFlipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxFlipViewController.xib; sourceTree = "<group>"; };
-		64532E1B105B049100EF734D /* BoxRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRegisterViewController.h; sourceTree = "<group>"; };
-		64532E1C105B049100EF734D /* BoxRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRegisterViewController.m; sourceTree = "<group>"; };
-		64532E1D105B049100EF734D /* BoxRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxRegisterView.xib; sourceTree = "<group>"; };
 		64532E21105B063600EF734D /* BoxRegistrationFields-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoxRegistrationFields-old.png"; sourceTree = "<group>"; };
-		64532F31105B240900EF734D /* BoxRegistrationXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRegistrationXMLBuilder.h; sourceTree = "<group>"; };
-		64532F32105B240900EF734D /* BoxRegistrationXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxRegistrationXMLBuilder.m; sourceTree = "<group>"; };
 		647166FA105F79C3004A9B26 /* BoxRegistrationFields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxRegistrationFields.png; sourceTree = "<group>"; };
 		647167D110601F97004A9B26 /* BoxSpinnerOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxSpinnerOverlayView.xib; sourceTree = "<group>"; };
 		6471681910602883004A9B26 /* BoxSpinnerOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxSpinnerOverlayViewController.h; sourceTree = "<group>"; };
 		6471681A10602883004A9B26 /* BoxSpinnerOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxSpinnerOverlayViewController.m; sourceTree = "<group>"; };
-		647169D310606AA3004A9B26 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
-		647169D410606AA3004A9B26 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
-		647169D510606AA3004A9B26 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		64716A231060818A004A9B26 /* BoxLoginTableViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxLoginTableViewBackground.png; sourceTree = "<group>"; };
 		64716A2B106083C3004A9B26 /* BoxDocumentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoxDocumentIcon.png; sourceTree = "<group>"; };
-		64716AC61060CC39004A9B26 /* BoxFolderModel+SaveableFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BoxFolderModel+SaveableFolder.h"; sourceTree = "<group>"; };
-		64716AC71060CC39004A9B26 /* BoxFolderModel+SaveableFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BoxFolderModel+SaveableFolder.m"; sourceTree = "<group>"; };
 		64716CF010617C08004A9B26 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		64716CF210617C08004A9B26 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		6479B4591059B2BB00EAC3F0 /* BoxRESTApiFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxRESTApiFactory.m; path = ../BoxCodeSamples/Classes/BoxRESTApiFactory.m; sourceTree = SOURCE_ROOT; };
 		6497E522107B0247000AC9BC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BoxPopup-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BoxPopup-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,7 +250,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				642343781055B74E001AD6BF /* BoxModelAndNetworkCode */,
 				6423436D1055B030001AD6BF /* BoxPopupControllerUICode */,
 				1D3623240D0F684500981E51 /* BoxPopupAppDelegate.h */,
 				1D3623250D0F684500981E51 /* BoxPopupAppDelegate.m */,
@@ -196,6 +270,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				48DE616B13CE4CBE0047DFC7 /* Vendor */,
+				48DE616F13CE4CBE0047DFC7 /* Utilities */,
+				48DE617613CE4CBE0047DFC7 /* Models */,
 				6497E522107B0247000AC9BC /* Entitlements.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -240,6 +317,119 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		48DE616B13CE4CBE0047DFC7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				48DE616C13CE4CBE0047DFC7 /* GTMDefines.h */,
+				48DE616D13CE4CBE0047DFC7 /* GTMRegex.h */,
+				48DE616E13CE4CBE0047DFC7 /* GTMRegex.m */,
+			);
+			name = Vendor;
+			path = ../BoxAPI/Classes/Vendor;
+			sourceTree = "<group>";
+		};
+		48DE616F13CE4CBE0047DFC7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				48DE617013CE4CBE0047DFC7 /* BoxModelUtilityFunctions.h */,
+				48DE617113CE4CBE0047DFC7 /* BoxModelUtilityFunctions.m */,
+				48DE617213CE4CBE0047DFC7 /* NSArray+BoxUtils.h */,
+				48DE617313CE4CBE0047DFC7 /* NSArray+BoxUtils.m */,
+				48DE617413CE4CBE0047DFC7 /* NSDictionaryXMLParser.h */,
+				48DE617513CE4CBE0047DFC7 /* NSDictionaryXMLParser.m */,
+			);
+			name = Utilities;
+			path = ../BoxAPI/Classes/Utilities;
+			sourceTree = "<group>";
+		};
+		48DE617613CE4CBE0047DFC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48DE617713CE4CBE0047DFC7 /* BoxComment.h */,
+				48DE617813CE4CBE0047DFC7 /* BoxComment.m */,
+				48DE617913CE4CBE0047DFC7 /* BoxFile.h */,
+				48DE617A13CE4CBE0047DFC7 /* BoxFile.m */,
+				48DE617B13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.h */,
+				48DE617C13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.m */,
+				48DE617D13CE4CBE0047DFC7 /* BoxFolder.h */,
+				48DE617E13CE4CBE0047DFC7 /* BoxFolder.m */,
+				48DE617F13CE4CBE0047DFC7 /* BoxObject.h */,
+				48DE618013CE4CBE0047DFC7 /* BoxObject.m */,
+				48DE618113CE4CBE0047DFC7 /* BoxRESTApiFactory.h */,
+				48DE618213CE4CBE0047DFC7 /* BoxRESTApiFactory.m */,
+				48DE618313CE4CBE0047DFC7 /* BoxUpdate.h */,
+				48DE618413CE4CBE0047DFC7 /* BoxUpdate.m */,
+				48DE618513CE4CBE0047DFC7 /* BoxUser.h */,
+				48DE618613CE4CBE0047DFC7 /* BoxUser.m */,
+				48DE618713CE4CBE0047DFC7 /* Builders */,
+				48DE619013CE4CBE0047DFC7 /* Operations */,
+			);
+			name = Models;
+			path = ../BoxAPI/Classes/Models;
+			sourceTree = "<group>";
+		};
+		48DE618713CE4CBE0047DFC7 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				48DE618813CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.h */,
+				48DE618913CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.m */,
+				48DE618A13CE4CBE0047DFC7 /* BoxFolderXMLBuilder.h */,
+				48DE618B13CE4CBE0047DFC7 /* BoxFolderXMLBuilder.m */,
+				48DE618C13CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.h */,
+				48DE618D13CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.m */,
+				48DE618E13CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.h */,
+				48DE618F13CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.m */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		48DE619013CE4CBE0047DFC7 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				48DE619113CE4CBE0047DFC7 /* BoxAddCommentsOperation.h */,
+				48DE619213CE4CBE0047DFC7 /* BoxAddCommentsOperation.m */,
+				48DE619313CE4CBE0047DFC7 /* BoxAPIOperation.h */,
+				48DE619413CE4CBE0047DFC7 /* BoxAPIOperation.m */,
+				48DE619513CE4CBE0047DFC7 /* BoxCopyOperation.h */,
+				48DE619613CE4CBE0047DFC7 /* BoxCopyOperation.m */,
+				48DE619713CE4CBE0047DFC7 /* BoxCreateFolderOperation.h */,
+				48DE619813CE4CBE0047DFC7 /* BoxCreateFolderOperation.m */,
+				48DE619913CE4CBE0047DFC7 /* BoxDeleteCommentOperation.h */,
+				48DE619A13CE4CBE0047DFC7 /* BoxDeleteCommentOperation.m */,
+				48DE619B13CE4CBE0047DFC7 /* BoxDeleteOperation.h */,
+				48DE619C13CE4CBE0047DFC7 /* BoxDeleteOperation.m */,
+				48DE619D13CE4CBE0047DFC7 /* BoxDownloadOperation.h */,
+				48DE619E13CE4CBE0047DFC7 /* BoxDownloadOperation.m */,
+				48DE619F13CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.h */,
+				48DE61A013CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.m */,
+				48DE61A113CE4CBE0047DFC7 /* BoxGetCommentsOperation.h */,
+				48DE61A213CE4CBE0047DFC7 /* BoxGetCommentsOperation.m */,
+				48DE61A313CE4CBE0047DFC7 /* BoxGetTicketOperation.h */,
+				48DE61A413CE4CBE0047DFC7 /* BoxGetTicketOperation.m */,
+				48DE61A513CE4CBE0047DFC7 /* BoxGetUpdatesOperation.h */,
+				48DE61A613CE4CBE0047DFC7 /* BoxGetUpdatesOperation.m */,
+				48DE61A713CE4CBE0047DFC7 /* BoxMoveOperation.h */,
+				48DE61A813CE4CBE0047DFC7 /* BoxMoveOperation.m */,
+				48DE61A913CE4CBE0047DFC7 /* BoxNetworkOperation.h */,
+				48DE61AA13CE4CBE0047DFC7 /* BoxNetworkOperation.m */,
+				48DE61AB13CE4CBE0047DFC7 /* BoxOperation.h */,
+				48DE61AC13CE4CBE0047DFC7 /* BoxOperation.m */,
+				48DE61AD13CE4CBE0047DFC7 /* BoxPrivateShareOperation.h */,
+				48DE61AE13CE4CBE0047DFC7 /* BoxPrivateShareOperation.m */,
+				48DE61AF13CE4CBE0047DFC7 /* BoxPublicShareOperation.h */,
+				48DE61B013CE4CBE0047DFC7 /* BoxPublicShareOperation.m */,
+				48DE61B113CE4CBE0047DFC7 /* BoxPublicUnshareOperation.h */,
+				48DE61B213CE4CBE0047DFC7 /* BoxPublicUnshareOperation.m */,
+				48DE61B313CE4CBE0047DFC7 /* BoxRegisterOperation.h */,
+				48DE61B413CE4CBE0047DFC7 /* BoxRegisterOperation.m */,
+				48DE61B513CE4CBE0047DFC7 /* BoxRenameOperation.h */,
+				48DE61B613CE4CBE0047DFC7 /* BoxRenameOperation.m */,
+				48DE61B713CE4CBE0047DFC7 /* BoxUploadOperation.h */,
+				48DE61B813CE4CBE0047DFC7 /* BoxUploadOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		6423436D1055B030001AD6BF /* BoxPopupControllerUICode */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,70 +446,6 @@
 				64234487105704F6001AD6BF /* BoxPopupExampleView.xib */,
 			);
 			name = "Nib Files";
-			sourceTree = "<group>";
-		};
-		642343781055B74E001AD6BF /* BoxModelAndNetworkCode */ = {
-			isa = PBXGroup;
-			children = (
-				642343BE1056D2AF001AD6BF /* Models */,
-				642343B41056D2AF001AD6BF /* Model Builders */,
-			);
-			name = BoxModelAndNetworkCode;
-			sourceTree = "<group>";
-		};
-		642343B41056D2AF001AD6BF /* Model Builders */ = {
-			isa = PBXGroup;
-			children = (
-				642343B51056D2AF001AD6BF /* Utilities */,
-				642343B81056D2AF001AD6BF /* BoxLoginModelXMLBuilder.h */,
-				642343B91056D2AF001AD6BF /* BoxLoginModelXMLBuilder.m */,
-				642343BA1056D2AF001AD6BF /* BoxFolderXMLBuilder.h */,
-				642343BB1056D2AF001AD6BF /* BoxFolderXMLBuilder.m */,
-				642343BC1056D2AF001AD6BF /* BoxHTTPRequestBuilders.h */,
-				642343BD1056D2AF001AD6BF /* BoxHTTPRequestBuilders.m */,
-				64532F31105B240900EF734D /* BoxRegistrationXMLBuilder.h */,
-				64532F32105B240900EF734D /* BoxRegistrationXMLBuilder.m */,
-			);
-			name = "Model Builders";
-			sourceTree = "<group>";
-		};
-		642343B51056D2AF001AD6BF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				642343B61056D2AF001AD6BF /* BoxRESTApiFactory.h */,
-				6479B4591059B2BB00EAC3F0 /* BoxRESTApiFactory.m */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
-		642343BE1056D2AF001AD6BF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				642343BF1056D2AF001AD6BF /* Utilities */,
-				642343C21056D2AF001AD6BF /* BoxUserModel.h */,
-				642343C31056D2AF001AD6BF /* BoxUserModel.m */,
-				642343C41056D2AF001AD6BF /* BoxObjectModel.h */,
-				642343C51056D2AF001AD6BF /* BoxObjectModel.m */,
-				642343C61056D2AF001AD6BF /* BoxFileModel.h */,
-				642343C71056D2AF001AD6BF /* BoxFileModel.m */,
-				642343C81056D2AF001AD6BF /* BoxFolderModel.h */,
-				642343C91056D2AF001AD6BF /* BoxFolderModel.m */,
-				64716AC61060CC39004A9B26 /* BoxFolderModel+SaveableFolder.h */,
-				64716AC71060CC39004A9B26 /* BoxFolderModel+SaveableFolder.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		642343BF1056D2AF001AD6BF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				647169D310606AA3004A9B26 /* GTMRegex.h */,
-				647169D410606AA3004A9B26 /* GTMRegex.m */,
-				647169D510606AA3004A9B26 /* GTMDefines.h */,
-				642343C01056D2AF001AD6BF /* BoxModelUtilityFunctions.h */,
-				642343C11056D2AF001AD6BF /* BoxModelUtilityFunctions.m */,
-			);
-			name = Utilities;
 			sourceTree = "<group>";
 		};
 		6423458B1057215A001AD6BF /* Images */ = {
@@ -389,15 +515,17 @@
 		6471685110602944004A9B26 /* Login Register Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				64532D57105AD80F00EF734D /* BoxFlipViewController.h */,
-				64532D58105AD80F00EF734D /* BoxFlipViewController.m */,
-				64532D59105AD80F00EF734D /* BoxFlipViewController.xib */,
-				6423456910571E23001AD6BF /* BoxLoginController.h */,
-				6423456A10571E23001AD6BF /* BoxLoginController.m */,
-				6423459010572202001AD6BF /* BoxLoginView.xib */,
-				64532E1B105B049100EF734D /* BoxRegisterViewController.h */,
-				64532E1C105B049100EF734D /* BoxRegisterViewController.m */,
-				64532E1D105B049100EF734D /* BoxRegisterView.xib */,
+				489C1C2713CE4E0400F01C1F /* BoxLoginBuilder.m */,
+				489C1C2813CE4E0400F01C1F /* BoxLoginBuilder.h */,
+				48E25F7E13CE19DE0007E27C /* BoxFlipViewController.xib */,
+				48E25F7F13CE19DE0007E27C /* BoxLoginView.xib */,
+				48E25F8013CE19DE0007E27C /* BoxRegisterView.xib */,
+				48E25F7B13CE199A0007E27C /* BoxLoginController.h */,
+				48E25F7C13CE199A0007E27C /* BoxLoginController.m */,
+				48E25F7813CE19850007E27C /* BoxFlipViewController.h */,
+				48E25F7913CE19850007E27C /* BoxFlipViewController.m */,
+				48E25F7213CE19710007E27C /* BoxRegisterViewController.h */,
+				48E25F7313CE19710007E27C /* BoxRegisterViewController.m */,
 			);
 			name = "Login Register Controllers";
 			sourceTree = "<group>";
@@ -483,11 +611,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E25F8313CE19DE0007E27C /* BoxRegisterView.xib in Resources */,
+				48E25F8213CE19DE0007E27C /* BoxLoginView.xib in Resources */,
+				48E25F8113CE19DE0007E27C /* BoxFlipViewController.xib in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				642343751055B0F8001AD6BF /* BoxPopupMainView.xib in Resources */,
 				64234489105704F6001AD6BF /* BoxPopupExampleView.xib in Resources */,
 				642344E610571969001AD6BF /* BoxPopupController.xib in Resources */,
-				6423459110572202001AD6BF /* BoxLoginView.xib in Resources */,
 				642345951057224E001AD6BF /* BoxSmallButtonImage.png in Resources */,
 				6423459C105723B1001AD6BF /* BoxTopBarLogo.png in Resources */,
 				642345A110572562001AD6BF /* BoxBlueGradientBackground.gif in Resources */,
@@ -499,8 +629,6 @@
 				64234B3010584D64001AD6BF /* BoxLargeButtonImage.png in Resources */,
 				64234CAF1058669B001AD6BF /* BoxBoxLogo.gif in Resources */,
 				64234D06105869D4001AD6BF /* BoxCollabFolder.png in Resources */,
-				64532D5B105AD80F00EF734D /* BoxFlipViewController.xib in Resources */,
-				64532E1F105B049100EF734D /* BoxRegisterView.xib in Resources */,
 				64532E22105B063600EF734D /* BoxRegistrationFields-old.png in Resources */,
 				647166FB105F79C3004A9B26 /* BoxRegistrationFields.png in Resources */,
 				647167D210601F97004A9B26 /* BoxSpinnerOverlayView.xib in Resources */,
@@ -524,27 +652,52 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* BoxPopupAppDelegate.m in Sources */,
 				642343721055B04A001AD6BF /* BoxPopupMainViewController.m in Sources */,
-				642343CB1056D2AF001AD6BF /* BoxLoginModelXMLBuilder.m in Sources */,
-				642343CC1056D2AF001AD6BF /* BoxFolderXMLBuilder.m in Sources */,
-				642343CD1056D2AF001AD6BF /* BoxHTTPRequestBuilders.m in Sources */,
-				642343CE1056D2AF001AD6BF /* BoxModelUtilityFunctions.m in Sources */,
-				642343CF1056D2AF001AD6BF /* BoxUserModel.m in Sources */,
-				642343D01056D2AF001AD6BF /* BoxObjectModel.m in Sources */,
-				642343D11056D2AF001AD6BF /* BoxFileModel.m in Sources */,
-				642343D21056D2AF001AD6BF /* BoxFolderModel.m in Sources */,
 				64234488105704F6001AD6BF /* BoxPopupExampleController.m in Sources */,
 				642344E510571969001AD6BF /* BoxPopupController.m in Sources */,
-				6423456C10571E23001AD6BF /* BoxLoginController.m in Sources */,
 				6423459A10572392001AD6BF /* BoxCommonUISetup.m in Sources */,
 				642346BF105733C2001AD6BF /* BoxLoginTableViewController.m in Sources */,
 				64234B5610585150001AD6BF /* BoxFolderChooserTableViewController.m in Sources */,
-				6479B45A1059B2BB00EAC3F0 /* BoxRESTApiFactory.m in Sources */,
-				64532D5A105AD80F00EF734D /* BoxFlipViewController.m in Sources */,
-				64532E1E105B049100EF734D /* BoxRegisterViewController.m in Sources */,
-				64532F33105B240900EF734D /* BoxRegistrationXMLBuilder.m in Sources */,
 				6471681C10602883004A9B26 /* BoxSpinnerOverlayViewController.m in Sources */,
-				647169D610606AA3004A9B26 /* GTMRegex.m in Sources */,
-				64716AC81060CC39004A9B26 /* BoxFolderModel+SaveableFolder.m in Sources */,
+				48E25F7413CE19710007E27C /* BoxRegisterViewController.m in Sources */,
+				48E25F7A13CE19850007E27C /* BoxFlipViewController.m in Sources */,
+				48E25F7D13CE199A0007E27C /* BoxLoginController.m in Sources */,
+				48DE61B913CE4CBE0047DFC7 /* GTMRegex.m in Sources */,
+				48DE61BA13CE4CBE0047DFC7 /* BoxModelUtilityFunctions.m in Sources */,
+				48DE61BB13CE4CBE0047DFC7 /* NSArray+BoxUtils.m in Sources */,
+				48DE61BC13CE4CBE0047DFC7 /* NSDictionaryXMLParser.m in Sources */,
+				48DE61BD13CE4CBE0047DFC7 /* BoxComment.m in Sources */,
+				48DE61BE13CE4CBE0047DFC7 /* BoxFile.m in Sources */,
+				48DE61BF13CE4CBE0047DFC7 /* BoxFolder+SaveableFolder.m in Sources */,
+				48DE61C013CE4CBE0047DFC7 /* BoxFolder.m in Sources */,
+				48DE61C113CE4CBE0047DFC7 /* BoxObject.m in Sources */,
+				48DE61C213CE4CBE0047DFC7 /* BoxRESTApiFactory.m in Sources */,
+				48DE61C313CE4CBE0047DFC7 /* BoxUpdate.m in Sources */,
+				48DE61C413CE4CBE0047DFC7 /* BoxUser.m in Sources */,
+				48DE61C513CE4CBE0047DFC7 /* BoxCommentsListModelXMLBuilder.m in Sources */,
+				48DE61C613CE4CBE0047DFC7 /* BoxFolderXMLBuilder.m in Sources */,
+				48DE61C713CE4CBE0047DFC7 /* BoxHTTPRequestBuilders.m in Sources */,
+				48DE61C813CE4CBE0047DFC7 /* BoxUpdatesListModelXMLBuilder.m in Sources */,
+				48DE61C913CE4CBE0047DFC7 /* BoxAddCommentsOperation.m in Sources */,
+				48DE61CA13CE4CBE0047DFC7 /* BoxAPIOperation.m in Sources */,
+				48DE61CB13CE4CBE0047DFC7 /* BoxCopyOperation.m in Sources */,
+				48DE61CC13CE4CBE0047DFC7 /* BoxCreateFolderOperation.m in Sources */,
+				48DE61CD13CE4CBE0047DFC7 /* BoxDeleteCommentOperation.m in Sources */,
+				48DE61CE13CE4CBE0047DFC7 /* BoxDeleteOperation.m in Sources */,
+				48DE61CF13CE4CBE0047DFC7 /* BoxDownloadOperation.m in Sources */,
+				48DE61D013CE4CBE0047DFC7 /* BoxGetAuthTokenOperation.m in Sources */,
+				48DE61D113CE4CBE0047DFC7 /* BoxGetCommentsOperation.m in Sources */,
+				48DE61D213CE4CBE0047DFC7 /* BoxGetTicketOperation.m in Sources */,
+				48DE61D313CE4CBE0047DFC7 /* BoxGetUpdatesOperation.m in Sources */,
+				48DE61D413CE4CBE0047DFC7 /* BoxMoveOperation.m in Sources */,
+				48DE61D513CE4CBE0047DFC7 /* BoxNetworkOperation.m in Sources */,
+				48DE61D613CE4CBE0047DFC7 /* BoxOperation.m in Sources */,
+				48DE61D713CE4CBE0047DFC7 /* BoxPrivateShareOperation.m in Sources */,
+				48DE61D813CE4CBE0047DFC7 /* BoxPublicShareOperation.m in Sources */,
+				48DE61D913CE4CBE0047DFC7 /* BoxPublicUnshareOperation.m in Sources */,
+				48DE61DA13CE4CBE0047DFC7 /* BoxRegisterOperation.m in Sources */,
+				48DE61DB13CE4CBE0047DFC7 /* BoxRenameOperation.m in Sources */,
+				48DE61DC13CE4CBE0047DFC7 /* BoxUploadOperation.m in Sources */,
+				489C1C2913CE4E0400F01C1F /* BoxLoginBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +717,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BoxPopup_Prefix.pch;
+				HEADER_SEARCH_PATHS = "../BoxPopup/**";
 				INFOPLIST_FILE = "BoxPopup-Info.plist";
 				PRODUCT_NAME = BoxPopup;
 			};
@@ -583,6 +737,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BoxPopup_Prefix.pch;
+				HEADER_SEARCH_PATHS = "../BoxPopup/**";
 				INFOPLIST_FILE = "BoxPopup-Info.plist";
 				PRODUCT_NAME = BoxPopup;
 				PROVISIONING_PROFILE = "";
@@ -601,7 +756,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7A5162A2-5E07-4C3C-B976-641F3C83475F";
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Debug;
 		};
@@ -614,7 +769,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphoneos4.3;
 			};
 			name = Release;
 		};

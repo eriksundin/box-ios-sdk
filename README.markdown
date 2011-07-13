@@ -10,9 +10,9 @@ You can use the Box.net API to create applications and websites that integrate w
 
 ### Usage ###
 
-#### BoxCodeSamples ####
+#### BoxAPI ####
 
-Provides model and network code that makes it easy to use the Box API methods for Login, Registration, GetAccountTree, Share, and Upload. See "BoxCodeSamples Readme" for specific information about individual functions. 
+The BoxAPI is can be used to produce iOS apps that interact with the Box.net website, including uploading, downloading, and retrieving file and folder information.  Also included is an example project that shows how to do the various actions.
 
 #### BoxPopup ####
 

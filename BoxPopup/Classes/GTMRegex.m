@@ -1,31 +1,23 @@
+
+//   Copyright 2011 Box.net, Inc.
 //
-//  GTMRegex.m
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
 //
-//  Copyright 2007-2008 Google Inc.
+//       http://www.apache.org/licenses/LICENSE-2.0
 //
-//  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-//  use this file except in compliance with the License.  You may obtain a copy
-//  of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-//  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-//  License for the specific language governing permissions and limitations under
-//  the License.
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 //
 
 #define GTMREGEX_DEFINE_GLOBALS 1
 #import "GTMRegex.h"
 #import "GTMDefines.h"
 
-// This is the pattern to use for walking replacement text when doing
-// substitutions.
-//
-// This pattern may look over-escaped, but remember the compiler will consume
-// one layer of slashes, and then we have to escape the slashes for them to be
-// seen as we want in the pattern.
 static NSString *const kReplacementPattern =
   @"((^|[^\\\\])(\\\\\\\\)*)(\\\\([0-9]+))";
 #define kReplacementPatternLeadingTextIndex       1
@@ -39,7 +31,6 @@ static NSString *const kReplacementPattern =
                  flags:(int)flags;
 @end
 
-// private enumerator as impl detail
 @interface GTMRegexEnumerator : NSEnumerator {
  @private
   GTMRegex *regex_;
@@ -455,7 +446,6 @@ static NSString *const kReplacementPattern =
   return result;
 }
 
-// private helper to run the regex on a block
 - (BOOL)runRegexOnUTF8:(const char*)utf8Str
                 nmatch:(size_t)nmatch
                 pmatch:(regmatch_t *)pmatch
@@ -483,8 +473,6 @@ static NSString *const kReplacementPattern =
 
 @implementation GTMRegexEnumerator
 
-// we don't block init because the class isn't exported, so no one can
-// create one, or if they do, they get whatever happens...
 
 - (id)initWithRegex:(GTMRegex *)regex
       processString:(NSString *)str
@@ -508,7 +496,6 @@ static NSString *const kReplacementPattern =
   return self;
 }
 
-// Don't need a finalize because savedRegMatches_ is marked __strong
 - (void)dealloc {
   if (savedRegMatches_) {
     free(savedRegMatches_);
