@@ -182,8 +182,8 @@
 
 	self.userName = [info objectForKey:@"userName"];
 	self.email = [info objectForKey:@"email"];
-	self.userId = [numberFormatter numberFromString:[info objectForKey:@"userID"]];
-	self.accessId = [numberFormatter numberFromString:[info objectForKey:@"accessID"]];
+	self.userId = [numberFormatter numberFromString:[info objectForKey:@"userId"]];
+	self.accessId = [numberFormatter numberFromString:[info objectForKey:@"accessId"]];
 	self.authToken = [info objectForKey:@"authToken"];
 	self.storageQuota = [numberFormatter numberFromString:[info objectForKey:@"storageQuota"]];
 	self.storageUsed = [numberFormatter numberFromString:[info objectForKey:@"storageUsed"]];
