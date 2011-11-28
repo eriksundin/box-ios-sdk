@@ -1,4 +1,3 @@
-
 //
 // Copyright 2011 Box.net, Inc.
 //
@@ -118,7 +117,7 @@ static const NSString * BOX_API_KEY = @"<YOUR API KEY HERE>";
 	NSString *pword = [BoxModelUtilityFunctions urlEncodeParameter:password];
 	NSString *user = [BoxModelUtilityFunctions urlEncodeParameter:boxLoginName];
 	NSString *urlString =  [NSString stringWithFormat:
-							@"http://www.box.net/api/1.0/rest?action=register_new_user&api_key=%@&login=%@&password=%@",
+							@"https://www.box.net/api/1.0/rest?action=register_new_user&api_key=%@&login=%@&password=%@",
 							BOX_API_KEY,
 							user,
 							pword];
