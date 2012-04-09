@@ -1,0 +1,131 @@
+//
+//  BoxDeleteActionViewController.m
+//  BoxAPI
+//
+//  Created by Peter Livesey on 3/19/12.
+//  Copyright (c) 2012 Box. All rights reserved.
+//
+
+#import "BoxDeleteActionViewController.h"
+#import "BoxFolder.h"
+#import "BoxNetworkOperationManager.h"
+#import "BoxDeleteOperation.h"
+
+
+@interface BoxDeleteActionViewController () <UIAlertViewDelegate> {
+    BoxObject * __selectedObject;
+}
+
+@property (nonatomic, assign) BoxObject * selectedObject;
+
+- (void)deleteBoxObject;
+
+@end
+
+@implementation BoxDeleteActionViewController
+
+@synthesize selectedObject = __selectedObject;
+
+#pragma mark - Delete Method
+
+- (void)deleteBoxObject {
+    /////////////////////// ******************************** \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    // Below is all the code which you need to run a delete operation. Any other code  \\
+    // in this class is for handling the table view so it can be ignored.              \\
+
+    BoxDeleteOperation * deleteOperation = [BoxDeleteOperation operationForTargetId:[self.selectedObject.objectId intValue] targetType:self.selectedObject.objectType];
+	OperationCompletionHandler onCompletetionBlock = ^(BoxOperation * op, BoxOperationResponse response) { //This is an example completion block. Your implementation is likely to be different.
+        NSString * message = [BoxNetworkOperationManager humanReadableErrorFromResponse:response];
+        NSString * title = @"";
+        if (response == BoxOperationResponseSuccessful) {
+            title = @"Success!";
+            [self refreshTableViewSource];
+        } else {
+            title = @"Error";
+        }
+        UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+        [alert show];
+    };
+    [[BoxNetworkOperationManager sharedBoxOperationManager] sendRequest:deleteOperation onCompletetion:onCompletetionBlock]; //sends the request
+    
+    /////////////////////// ******************************** \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
+}
+
+#pragma mark - Table view data source
+
+- (void)refreshTableViewSource {
+    GetFolderCompletionHandler block = ^(BoxFolder* folder, BoxFolderDownloadResponseType response) {
+        if (response == boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved) {
+            self.rootFolder = folder;
+            [self.tableView reloadData];
+        } else {
+            UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:[BoxNetworkOperationManager humanReadableErrorFromResponse:response] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+            [alert show];
+        }
+    };
+    [[BoxNetworkOperationManager sharedBoxOperationManager] getBoxFolderForID:0 onCompletion:block];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.rootFolder.objectsInFolder count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+    BoxObject* boxObject = (BoxObject*)[self.rootFolder.objectsInFolder objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = boxObject.objectName;
+    cell.detailTextLabel.text = boxObject.objectDescription;
+    
+    if ([boxObject isKindOfClass:[BoxFolder class]]) {
+        BoxFolder * folder = (BoxFolder*)boxObject;
+        if(folder.isCollaborated) {
+            cell.imageView.image = [UIImage imageNamed:@"BoxCollabFolder"];
+        } else {
+            cell.imageView.image = [UIImage imageNamed:@"BoxFolderIcon-old"];
+        }
+        if ([folder.fileCount intValue] == 1) {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"1 file. %@", folder.objectDescription];
+        } else {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ file. %@", folder.fileCount, folder.objectDescription];
+        }
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"BoxDocumentIcon"];
+    }
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BoxObject* boxObject = (BoxObject*)[self.rootFolder.objectsInFolder objectAtIndex:indexPath.row];
+    self.selectedObject = boxObject;
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Delete" message:[NSString stringWithFormat:@"Are you sure you want to delete %@?", boxObject.objectName] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    [alert show];
+    [alert release];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - UIAlertViewDelegate Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        [self deleteBoxObject];
+    }
+}
+
+@end
