@@ -181,7 +181,7 @@
 #pragma mark Subclass Overrides
 
 - (void)requestDidProgressWithRatio:(NSNumber *)ratio {
-	if ([_delegate respondsToSelector:@selector(operation:didProgressForPath:ratio:)]) {
+	if ([_delegate respondsToSelector:@selector(operation:didProgressForPath:completionRatio:)]) {
 		[_delegate operation:self didProgressForPath:_path completionRatio:ratio];
 	}
 }
