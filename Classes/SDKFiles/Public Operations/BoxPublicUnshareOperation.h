@@ -19,7 +19,7 @@
 
 @interface BoxPublicUnshareOperation : BoxAPIOperation
 
-@property (nonatomic, readwrite, assign) NSString *targetID;
+@property (nonatomic, readwrite, retain) NSString *targetID;
 @property (nonatomic, readwrite, retain) NSString *targetType;
 @property (nonatomic, readwrite, retain) NSString *authToken;
 
