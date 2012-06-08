@@ -34,7 +34,7 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 
 - (id)init {
 	if (self = [super init]) {
-      
+        
     }
     
     inCollaborationTag = NO;
@@ -59,20 +59,21 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 	if (!basePath) {
 		basePath = [NSIndexPath indexPathWithIndex:0];
 	}
-
+    
 	if (!curModel) {
 		assert(NO);
         return NO;
 	}
-
-	NSXMLParser *parser = [[[NSXMLParser alloc] initWithContentsOfURL:xmlUrl] autorelease];
-
-	[parser setDelegate:self];
-	[parser setShouldProcessNamespaces:NO];
-	[parser setShouldReportNamespacePrefixes: NO];
-	[parser setShouldResolveExternalEntities: NO];
-
-	if ([parser parse] == NO)
+    
+    NSData * dataXml = [[[NSData alloc] initWithContentsOfURL:xmlUrl] autorelease];
+    NSXMLParser *parser = [[[NSXMLParser alloc] initWithData:dataXml] autorelease];
+    
+    [parser setDelegate:self];
+    [parser setShouldProcessNamespaces:NO];
+    [parser setShouldReportNamespacePrefixes: NO];
+    [parser setShouldResolveExternalEntities: NO];
+    
+    if ([parser parse] == NO)
     {
         if (*error){
             *error = [parser parserError];
@@ -82,7 +83,7 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
         
         return NO;
     }
-
+    
     return YES;
 }
 
@@ -95,43 +96,48 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 + (BoxFolderDownloadResponseType)parseXMLWithUrl:(NSURL *)xmlUrl
 									rootFolderId:(NSString *)rootId
 									  parseError:(NSError **)error
-								  folderModel:(BoxFolder *)folder
-								basePathOrNil:(NSIndexPath *)path
+                                     folderModel:(BoxFolder *)folder
+                                   basePathOrNil:(NSIndexPath *)path
 {
-	if (!parserLock) {
-		parserLock = [[NSLock alloc] init];
-	}
-
-	[parserLock lock];
-
-	status = nil;
-
-	BoxFolderXMLBuilder *reader = [[BoxFolderXMLBuilder alloc] init];
-	folder.objectId = rootId;
-
-	[reader parseXMLWithUrlLocal:xmlUrl
-					rootFolderId:rootId
-					  parseError:error
-					 folderModel:folder
-				   basePathOrNil:path];
-	[reader release];
-
-	NSString * statusCopy;
-	if (status != nil) {
-		statusCopy = [[status copy] autorelease];
-	} else {
-		statusCopy = nil;
-	}
-
-	[parserLock unlock];
-
-	if(statusCopy && [statusCopy isEqualToString:@"listing_ok"]) {
-		return boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved;
-	} else if(statusCopy && [statusCopy isEqualToString:@"not_logged_in"]) {
-		return boxFolderDownloadResponseTypeFolderNotLoggedIn;
-	} else {
-		return boxFolderDownloadResponseTypeFolderFetchError;
-	}
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    if (!parserLock) {
+        parserLock = [[NSLock alloc] init];
+    }
+    
+    [parserLock lock];
+    
+    status = nil;
+    
+    BoxFolderXMLBuilder *reader = [[BoxFolderXMLBuilder alloc] init];
+    folder.objectId = rootId;
+    
+    [reader parseXMLWithUrlLocal:xmlUrl
+                    rootFolderId:rootId
+                      parseError:error
+                     folderModel:folder
+                   basePathOrNil:path];
+    [reader release];
+    
+    NSString * statusCopy;
+    if (status != nil) {
+        statusCopy = [[status copy] autorelease];
+    } else {
+        statusCopy = nil;
+    }
+    
+    [parserLock unlock];
+    
+    if(statusCopy && [statusCopy isEqualToString:@"listing_ok"]) {
+        [pool drain];
+        return boxFolderDownloadResponseTypeFolderSuccessfullyRetrieved;
+    } else if(statusCopy && [statusCopy isEqualToString:@"not_logged_in"]) {
+        [pool drain];
+        return boxFolderDownloadResponseTypeFolderNotLoggedIn;
+    } else {
+        [pool drain];
+        return boxFolderDownloadResponseTypeFolderFetchError;
+    }
 }
 
 + (BoxFolder *)folderForId:(NSString *)rootId
@@ -149,7 +155,7 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 										  parseError:&err
 										 folderModel:model
 									   basePathOrNil:path];
-
+    
 	return model;
 }
 
@@ -162,7 +168,7 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 }
 
 - (void)parser:(NSXMLParser *)parser
-    didStartElement:(NSString *)elementName
+didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
 	attributes:(NSDictionary *)attributeDict
@@ -194,11 +200,11 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 			int idLen = [thisId length];
 			if (idLen > 0) {
 				if ([thisId isEqualToString: curModel.objectId]) {
-				  isRoot =TRUE;
+                    isRoot =TRUE;
 				}
 			}
 		}
-
+        
 		if (isRoot) {
 			[curModel setValuesWithDictionary:attributeDict]; // we do this for the root, otherwise it would be unnecessary.
 		} else {
@@ -221,7 +227,7 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 	if (qName) {
 		elementName = qName;
 	}
-
+    
 	if ([elementName isEqualToString: @"status"] && !inCollaborationTag) {
 		status = [[contentHolder copy] autorelease];
 	} else if ([elementName isEqualToString:@"folder"]) {

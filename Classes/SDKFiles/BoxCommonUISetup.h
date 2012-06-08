@@ -16,7 +16,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BoxUIConstants.h"
 
 @interface BoxCommonUISetup : NSObject {
 

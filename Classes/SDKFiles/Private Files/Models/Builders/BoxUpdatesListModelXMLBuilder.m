@@ -50,6 +50,8 @@
 #pragma mark -
 
 - (NSArray *)updatesWithData:(NSData *)xmlData {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
 	self.updatesList = [[[NSMutableArray alloc] init] autorelease];
 	self.contentHolder = [[[NSMutableString alloc] initWithString:@""] autorelease];
 
@@ -60,6 +62,8 @@
 	[parser setShouldResolveExternalEntities: NO];
 	[parser parse];	
 	[parser release];
+    
+    [pool drain];
 	
 	return self.updatesList;
 }

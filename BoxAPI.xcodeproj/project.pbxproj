@@ -196,7 +196,6 @@
 		612FF482152E3AFC0032DE8C /* BoxUploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxUploadOperation.h; sourceTree = "<group>"; };
 		612FF483152E3AFC0032DE8C /* BoxUploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxUploadOperation.m; sourceTree = "<group>"; };
 		612FF484152E3AFC0032DE8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		612FF565152E4FD10032DE8C /* BoxUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxUIConstants.h; path = "Private Files/BoxUIConstants.h"; sourceTree = "<group>"; };
 		612FF567152E509A0032DE8C /* BoxBlueGradientBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BoxBlueGradientBackground.gif; sourceTree = "<group>"; };
 		612FF56B153368630032DE8C /* BoxBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxBrowserTableViewController.h; sourceTree = "<group>"; };
 		612FF56C153368660032DE8C /* BoxBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxBrowserTableViewController.m; sourceTree = "<group>"; };
@@ -330,7 +329,6 @@
 		612FF423152E3AFC0032DE8C /* SDKFiles */ = {
 			isa = PBXGroup;
 			children = (
-				612FF565152E4FD10032DE8C /* BoxUIConstants.h */,
 				612FF424152E3AFC0032DE8C /* BoxAPIKey.h */,
 				612FF425152E3AFC0032DE8C /* BoxCommonUISetup.h */,
 				612FF426152E3AFC0032DE8C /* BoxCommonUISetup.m */,

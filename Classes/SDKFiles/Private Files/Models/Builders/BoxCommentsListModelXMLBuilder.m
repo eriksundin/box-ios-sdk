@@ -38,7 +38,10 @@
 }
 
 - (NSArray *)commentsForURL:(NSURL *)url {
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    NSData * dataXml = [[[NSData alloc] initWithContentsOfURL:url] autorelease];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:dataXml];
 	
 	[parser setDelegate: self];
 	[parser setShouldProcessNamespaces:NO];
@@ -47,7 +50,9 @@
 	
 	[parser parse];
 	
-	[parser release];
+    [parser release];
+    
+    [pool drain];
 	
 	return self.mainCommentList;
 }

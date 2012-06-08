@@ -79,11 +79,18 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
     [self.view addSubview:self.webView];
-    [NSThread detachNewThreadSelector:@selector(loginAction) toTarget:self withObject:nil];
+    [self performSelectorOnMainThread:@selector(loginAction) withObject:nil waitUntilDone:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self stopActivityIndicator];
 }
 
 - (void)loadView {
@@ -105,7 +112,8 @@
 - (void)loginAction {
     @synchronized(self) {
         if (!self.loginBuilder) {
-            self.loginBuilder = [[[BoxLoginBuilder alloc] initWithWebview:self.webView delegate:self] autorelease];
+            self.loginBuilder = [[BoxLoginBuilder alloc] initWithWebview:self.webView delegate:self];
+            [self.loginBuilder release]; //back to a retain count of 1. Shouldn't autorelease because on a different thread
         }
     }
 	

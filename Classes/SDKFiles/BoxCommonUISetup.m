@@ -23,10 +23,10 @@
 +(void) formatNavigationBarWithBoxIconAndColorScheme:(UINavigationController*)navController andNavItem:(UINavigationItem*)navItem
 {
 	UIImageView * logo = [[[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 54.0f, 32.0f)] autorelease];
-    logo.image = BOXPOPUP_TOP_BAR_LOGO_IMAGE;
+    logo.image = [UIImage imageNamed:@"BoxTopBarLogo"];
     logo.center = [navController.navigationBar center];
     navItem.titleView = logo;
-	navController.navigationBar.tintColor = BOX_NAVIGATION_BAR_COLOR;	
+	navController.navigationBar.tintColor = [UIColor colorWithRed:0.219608f green:0.537255f blue:0.74117647f alpha:1.0];
 }
 
 @end

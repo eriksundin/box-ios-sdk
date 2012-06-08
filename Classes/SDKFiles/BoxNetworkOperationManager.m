@@ -110,6 +110,8 @@ static BoxNetworkOperationManager * sharedManager = nil;
 #pragma mark - Private Methods
 
 - (void)getFolder:(NSDictionary*)params {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
 	BoxUser* userModel = [BoxUser savedUser];
 	
 	NSString * ticket = userModel.authToken;
@@ -122,6 +124,8 @@ static BoxNetworkOperationManager * sharedManager = nil;
         block(folderModel, responseType);
         Block_release(block); //now finished with it
     });
+    
+    [pool drain];
 }
 
 #pragma mark - NetworkOperationDelegate Methods
