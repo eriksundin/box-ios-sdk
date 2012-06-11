@@ -30,5 +30,5 @@
 */
 
 #warning This field needs to be completed with your API Key. Otherwise, the SDK will not work.
-static const NSString * BOX_API_KEY = @"1vyz7z7abi0ic3j3cvto0tj43og52ksx";
+static const NSString * BOX_API_KEY = @"";
 
