@@ -27,6 +27,8 @@
 	NSOutputStream *_outputStream;
     
 	NSString *_tempFilePath;
+	
+	BoxFileDownloadProgressHandler __progressHandler;
 }
 
 @property (nonatomic, readwrite, retain) NSString *targetFileID;
@@ -43,6 +45,7 @@
 @synthesize tempFilePath = _tempFilePath;
 @synthesize authToken = _authToken;
 @synthesize targetFileID = _targetFileID;
+@synthesize progressHandler = __progressHandler;
 
 + (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
 									  toPath:(NSString *)path
@@ -80,6 +83,9 @@
     _request = nil;
     [_tempFilePath release];
     _tempFilePath = nil;
+	
+	[__progressHandler release];
+	__progressHandler = nil;
     
 	[super dealloc];
 }
@@ -154,6 +160,18 @@
 	}
 
 	[super requestDidCompleteWithResponse:response];
+}
+
+- (void)requestDidProgressWithRatio:(NSNumber *)ratio
+{
+	if (self.progressHandler != NULL)
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.progressHandler(self, ratio);
+		});
+	}
+	
+	[super requestDidProgressWithRatio:ratio];
 }
 
 @end

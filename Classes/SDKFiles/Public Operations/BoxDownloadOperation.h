@@ -18,10 +18,14 @@
 #import <Foundation/Foundation.h>
 #import "BoxNetworkOperation.h"
 
+typedef void(^BoxFileDownloadProgressHandler)(BoxOperation *op, NSNumber *completionRatio); // progress is returned as between 0 (0%) and 1 (100%).
+
 @interface BoxDownloadOperation : BoxNetworkOperation
 
 @property (nonatomic, readwrite, retain) NSString *tempFilePath;
 @property (nonatomic, readwrite, retain) NSString *authToken;
+
+@property (nonatomic, readwrite, copy) BoxFileDownloadProgressHandler progressHandler;
 
 + (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
 									  toPath:(NSString *)path;

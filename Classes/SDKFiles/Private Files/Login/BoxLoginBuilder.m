@@ -72,9 +72,7 @@
 	
 	// if we don't have the ticket, request it
 	// otherwise, go straight to the next step
-	NSLog(@"starting login process");
 	if (!self.ticketOperation.ticket || self.ticketOperation.ticket == @"") {
-		NSLog(@"starting the ticket operation");
         if (_delegate) {
             [_delegate startActivityIndicator];
         }
@@ -88,22 +86,25 @@
 #pragma mark BoxOperationDelegate
 
 - (void)operation:(BoxOperation *)op didCompleteForPath:(NSString *)path response:(BoxOperationResponse)response {
-	
 	if (response != BoxOperationResponseSuccessful) {
-		[_delegate loginOperation:op failedWithError:BoxLoginBuilderResponseTypeFailed];
-		return;
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[_delegate loginOperation:op failedWithError:BoxLoginBuilderResponseTypeFailed];
+		});
 	}
-	
 	// what we do depends on which operation completed
-	if (op.operationType == BoxOperationTypeGetTicket) {
+	else if (op.operationType == BoxOperationTypeGetTicket) {
 		// need to launch the webview
 		_webViewStep = BoxLoginBuilderWebViewStepBegin;
-		[_delegate startActivityIndicator];
-		[_webView loadRequest:[NSURLRequest requestWithURL:self.ticketOperation.authenticationURL]];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[_delegate startActivityIndicator];
+			[_webView loadRequest:[NSURLRequest requestWithURL:self.ticketOperation.authenticationURL]];
+		});
 	} else if (op.operationType == BoxOperationTypeGetAuthToken) {
 		// login complete!
-		[_delegate loginCompletedWithUser:((BoxGetAuthTokenOperation*)op).user stayLoggedIn:self.rememberLogin];
-		[_delegate stopActivityIndicator];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[_delegate loginCompletedWithUser:((BoxGetAuthTokenOperation*)op).user stayLoggedIn:self.rememberLogin];
+			[_delegate stopActivityIndicator];
+		});
 	}
 }
 

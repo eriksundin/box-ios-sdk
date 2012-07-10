@@ -81,9 +81,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
-    [self.view addSubview:self.webView];
-    [self performSelectorOnMainThread:@selector(loginAction) withObject:nil waitUntilDone:NO];
+	if (self.webView == nil)
+	{
+		self.webView = [[[UIWebView alloc] initWithFrame:self.view.bounds] autorelease];
+		[self.view addSubview:self.webView];
+    }
+	[self performSelectorOnMainThread:@selector(loginAction) withObject:nil waitUntilDone:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
