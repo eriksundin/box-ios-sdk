@@ -50,7 +50,7 @@
 + (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
 									  toPath:(NSString *)path
 {
-	return [[[BoxDownloadOperation alloc] initForFileID:targetFileID
+	return [[[self alloc] initForFileID:targetFileID
 											  localPath:path 
 											  authToken:[BoxLoginViewController currentUser].authToken
                                                delegate:nil] autorelease];
