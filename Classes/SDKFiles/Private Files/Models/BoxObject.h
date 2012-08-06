@@ -48,6 +48,8 @@
 @property (nonatomic, readwrite, retain) NSDate *objectUpdatedTime;
 @property (nonatomic, readonly) NSString *objectType;
 
+@property (nonatomic, readonly) NSMutableArray *tags;
+
 - (id)initWithDictionary:(NSDictionary *)values;
 - (void)setValuesWithDictionary:(NSDictionary *)values;
 - (NSString *)objectToString;

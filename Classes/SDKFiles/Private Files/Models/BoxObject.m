@@ -18,6 +18,7 @@
 #import "BoxObject.h"
 #import "BoxFolder.h"
 #import "BoxFile.h"
+#import "BoxTag.h"
 
 
 @implementation BoxObject
@@ -32,6 +33,8 @@
 @synthesize objectSize = _objectSize;
 @synthesize objectCreatedTime = _objectCreatedTime;
 @synthesize objectUpdatedTime = _objectUpdatedTime;
+@synthesize tags = _tags;
+
 
 -(void)releaseAndNilValues {
 	[_objectId release];
@@ -52,6 +55,8 @@
     _objectCreatedTime = nil;
 	[_objectUpdatedTime release];
     _objectUpdatedTime = nil;
+    [_tags release];
+    _tags = nil;
 }
 
 - (void)setValuesWithDictionary:(NSDictionary *)values {
@@ -125,8 +130,18 @@
 	return returnDict;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _tags = [[NSMutableArray alloc] init];
+    }
+
+    return self;
+}
+
+
 - (id)initWithDictionary:(NSDictionary *)values {
-	if (self = [super init]) {
+	if (self = [self init]) {
 		[self setValuesWithDictionary:values];
 	}
 

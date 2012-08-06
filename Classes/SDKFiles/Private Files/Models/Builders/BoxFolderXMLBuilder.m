@@ -17,6 +17,7 @@
 
 #import "BoxFolderXMLBuilder.h"
 #import "BoxWebLink.h"
+#import "BoxTag.h"
 
 
 @implementation BoxFolderXMLBuilder
@@ -30,6 +31,7 @@ static BOOL inInnerFolderTag;
 static BOOL inOuterFolderTag;
 
 static BoxFolder *curModel;
+static BoxObject *currentlyParsedObject;
 
 static NSLock *parserLock = nil; // necessary so that the statics don't trample each other from different threads. Fix later if we want XML parsing & DL to be parallel (doesn't makes sense for iphone though). We should go to JSON though... Really.
 
@@ -55,6 +57,8 @@ static NSLock *parserLock = nil; // necessary so that the statics don't trample 
 			   basePathOrNil:(NSIndexPath *)path
 {
 	curModel = folder;
+    currentlyParsedObject = nil;
+
 	basePath = path;
     
 	if (!basePath) {
@@ -187,9 +191,11 @@ didStartElement:(NSString *)elementName
 		contentHolder = [NSMutableString string ];
 	} else if ([elementName isEqualToString: @"file"]) {
 		BoxFile *info = [[[BoxFile alloc] initWithDictionary:attributeDict] autorelease];
+        currentlyParsedObject = info;
 		[curModel.objectsInFolder addObject:info];
     } else if ([elementName isEqualToString: @"web_link"]) {
    		BoxWebLink *info = [[[BoxWebLink alloc] initWithDictionary:attributeDict] autorelease];
+        currentlyParsedObject = info;
    		[curModel.objectsInFolder addObject:info];
 	} else if ([elementName isEqualToString: @"folder"]){
 		if(inOuterFolderTag == YES) {
@@ -213,11 +219,15 @@ didStartElement:(NSString *)elementName
 			[curModel setValuesWithDictionary:attributeDict]; // we do this for the root, otherwise it would be unnecessary.
 		} else {
 			BoxFolder *folder = [[BoxFolder alloc] initWithDictionary:attributeDict];
+            currentlyParsedObject = folder;
 			[curModel.objectsInFolder addObject:folder];
 			[folder release];
 		}
 	} else if ([elementName isEqual: @"collaboration"]) {
         inCollaborationTag = NO;
+    } else if ([elementName isEqual: @"tag"]) {
+        BoxTag *tag = [[[BoxTag alloc] initWithDictionary:attributeDict] autorelease];
+        [currentlyParsedObject.tags addObject:tag];
     } else {
 		contentHolder = nil;
 	}
