@@ -16,6 +16,7 @@
 //
 
 #import "BoxFolderXMLBuilder.h"
+#import "BoxWebLink.h"
 
 
 @implementation BoxFolderXMLBuilder
@@ -184,9 +185,12 @@ didStartElement:(NSString *)elementName
         }
     } else if ([elementName isEqualToString: @"status"] && !inCollaborationTag) {
 		contentHolder = [NSMutableString string ];
-	} else if ([elementName isEqualToString: @"file"]){
+	} else if ([elementName isEqualToString: @"file"]) {
 		BoxFile *info = [[[BoxFile alloc] initWithDictionary:attributeDict] autorelease];
 		[curModel.objectsInFolder addObject:info];
+    } else if ([elementName isEqualToString: @"web_link"]) {
+   		BoxWebLink *info = [[[BoxWebLink alloc] initWithDictionary:attributeDict] autorelease];
+   		[curModel.objectsInFolder addObject:info];
 	} else if ([elementName isEqualToString: @"folder"]){
 		if(inOuterFolderTag == YES) {
 			inInnerFolderTag = YES;
