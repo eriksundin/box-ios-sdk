@@ -47,8 +47,7 @@
 @synthesize targetFileID = _targetFileID;
 @synthesize progressHandler = __progressHandler;
 
-+ (id)operationForFileID:(NSString *)targetFileID
-									  toPath:(NSString *)path
++ (id)operationForFileID:(NSString *)targetFileID toPath:(NSString *)path
 {
 	return [[[self alloc] initForFileID:targetFileID
 											  localPath:path 
