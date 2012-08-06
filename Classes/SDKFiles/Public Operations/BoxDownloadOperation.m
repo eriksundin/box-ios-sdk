@@ -47,7 +47,7 @@
 @synthesize targetFileID = _targetFileID;
 @synthesize progressHandler = __progressHandler;
 
-+ (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
++ (id)operationForFileID:(NSString *)targetFileID
 									  toPath:(NSString *)path
 {
 	return [[[self alloc] initForFileID:targetFileID
