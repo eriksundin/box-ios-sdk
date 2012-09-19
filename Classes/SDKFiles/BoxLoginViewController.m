@@ -1,4 +1,3 @@
-
 //
 // Copyright 2011 Box, Inc.
 //
@@ -97,8 +96,24 @@
 }
 
 - (void)loadView {
+
     [super loadView];
-    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height); //automatically resizes in case of a nav bar
+    
+    CGFloat width = self.view.frame.size.width;
+    CGFloat height = self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height;
+    
+    // The best way to determine interface orientation is to look at status bar orientation.
+    // UIDevice class measures orientation based on accelerometer and if device lays flat,
+    // it won't return the correct orientation.
+    UIDeviceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (UIDeviceOrientationIsLandscape(orientation)) {
+        // Change width and height if in landscapte mode
+        width = self.view.frame.size.height;
+        height = self.view.frame.size.width - self.navigationController.navigationBar.frame.size.height;
+    }
+    
+    self.view.frame = CGRectMake(0, 0, width, height); //automatically resizes in case of a nav bar
+
 }
 
 - (void)dealloc {
