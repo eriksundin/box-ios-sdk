@@ -27,7 +27,6 @@ typedef void(^BoxFileDownloadProgressHandler)(BoxOperation *op, NSNumber *comple
 
 @property (nonatomic, readwrite, copy) BoxFileDownloadProgressHandler progressHandler;
 
-+ (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
-									  toPath:(NSString *)path;
++ (id)operationForFileID:(NSString *)targetFileID toPath:(NSString *)path;
 
 @end

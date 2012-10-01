@@ -35,8 +35,8 @@
 
 + (NSString *)getAccountTreeOneLevelUrlString:(NSString *)token boxFolderId:(NSString *)folderID {
 	NSString *urlString = [NSString stringWithFormat:
-						   @"https://www.box.net/api/1.0/rest?action=get_account_tree&api_key=%@&auth_token=%@&folder_id=%@&params[]=nozip&params[]=onelevel&params[]=has_collaborators&params[]=checksum",
-						   BOX_API_KEY,
+						   @"https://www.box.net/api/1.0/rest?action=get_account_tree&api_key=%@&auth_token=%@&folder_id=%@&params[]=nozip&params[]=onelevel&params[]=has_collaborators&params[]=checksum&params[]=web_links&params[]=show_tag_names",
+                           BOX_API_KEY,
 						   token,
 						   folderID];
     
@@ -45,7 +45,7 @@
 
 + (NSString *)getAccountTreeOneLevelUrlStringFoldersOnly:(NSString *)token boxFolderId:(NSString *)folderID {
 	NSString *urlString = [NSString stringWithFormat:
-						   @"https://www.box.net/api/1.0/rest?action=get_account_tree&api_key=%@&auth_token=%@&folder_id=%@&params[]=nozip&params[]=onelevel&params[]=has_collaborators&params[]=checksum&params[]=nofiles",
+						   @"https://www.box.net/api/1.0/rest?action=get_account_tree&api_key=%@&auth_token=%@&folder_id=%@&params[]=nozip&params[]=onelevel&params[]=has_collaborators&params[]=checksum&params[]=nofiles&params[]=web_links&params[]=show_tag_names",
 						   BOX_API_KEY,
 						   token,
 						   folderID];

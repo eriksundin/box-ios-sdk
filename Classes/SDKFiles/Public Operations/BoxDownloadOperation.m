@@ -47,10 +47,9 @@
 @synthesize targetFileID = _targetFileID;
 @synthesize progressHandler = __progressHandler;
 
-+ (BoxDownloadOperation *)operationForFileID:(NSString *)targetFileID
-									  toPath:(NSString *)path
++ (id)operationForFileID:(NSString *)targetFileID toPath:(NSString *)path
 {
-	return [[[BoxDownloadOperation alloc] initForFileID:targetFileID
+	return [[[self alloc] initForFileID:targetFileID
 											  localPath:path 
 											  authToken:[BoxLoginViewController currentUser].authToken
                                                delegate:nil] autorelease];
