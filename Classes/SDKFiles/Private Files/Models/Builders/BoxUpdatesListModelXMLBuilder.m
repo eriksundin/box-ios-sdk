@@ -89,6 +89,23 @@ didStartElement:(NSString *)elementName
 		}
         
 		self.boxObject = [[[childClass alloc] init] autorelease];
+
+        if ([self.boxObject isKindOfClass:[BoxFile class]]) {
+            BoxFile *file = (BoxFile *) self.boxObject;
+            [file setObjectId:[attributeDict objectForKey:@"id"]];
+            [file setObjectName:[attributeDict objectForKey:@"file_name"]];
+            [file setIsShared:[[attributeDict objectForKey:@"shared"] boolValue]];
+            [file setSha1:[attributeDict objectForKey:@"sha1"]];
+            [file setObjectCreatedTime:[NSDate dateWithTimeIntervalSince1970:[[attributeDict objectForKey:@"created"] integerValue]]];
+            [file setObjectUpdatedTime:[NSDate dateWithTimeIntervalSince1970:[[attributeDict objectForKey:@"updated"] integerValue]]];
+            [file setObjectSize:[NSNumber numberWithInteger:[[attributeDict objectForKey:@"size"] integerValue]]];
+            [file setUserId:[attributeDict objectForKey:@"user_id"]];
+            [file setSharedLink:[attributeDict objectForKey:@"shared_link"]];
+            [file setSmallThumbnailURL:[attributeDict objectForKey:@"small_thumbnail"]];
+            [file setLargeThumbnailURL:[attributeDict objectForKey:@"large_thumbnail"]];
+            [file setLargerThumbnailURL:[attributeDict objectForKey:@"larger_thumbnail"]];
+            [file setPreviewThumbnailURL:[attributeDict objectForKey:@"preview_thumbnail"]];
+        }
 	}
 }
 

@@ -235,7 +235,7 @@
     }
     password = password ? [BoxModelUtilityFunctions urlEncodeParameter:password] : @"";
 	message = message ? [BoxModelUtilityFunctions urlEncodeParameter:message] : @"";
-	emails = emails ? emails : [NSArray array];
+	emails = emails ? emails : [NSArray arrayWithObject:@""];
     
 	NSString *url = [NSString stringWithFormat:
 					 @"%@/rest?action=public_share&api_key=%@&auth_token=%@&target=%@&target_id=%@&password=%@&message=%@",
