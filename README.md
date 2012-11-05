@@ -12,6 +12,8 @@ You can use the Box.com API to create applications and websites that integrate w
 
 ### Setup ###
 
+Please read this article on authentication with iOS first: http://developers.box.com/authentication-in-your-ios-app/
+
 1. Download BoxAPI folder
 2. Copy BoxAPI/Classes/SDKFiles into your project
 3. Select 'Copy items into destination group's folder (if needed)'. Select 'Create groups for any added folders'. Ensure that you are adding it to all the relevant targets.
