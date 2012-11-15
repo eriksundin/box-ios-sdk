@@ -20,9 +20,8 @@ Please read this article on authentication with iOS first: http://developers.box
 4. Click Finish
 5. Go to your Project->[the relevant target]->Build Phases->Link Binary With Libraries to add a framework
 6. Click the + button and add Security.framework
-7. Open in Xcode SDKFiles->BoxAPIKey.h
-8. Enter your API key as an NSString and remove the #warning line. If you do not have an API Key, you can obtain one from http://developers.box.net/
-9. At this point, your project should build with no errors or warnings. If you are having difficulty at this point, please ping us on our [forum](http://forum.developers.box.net/box_developers) or email us directly at developers[at]box[dot]net.
+7. In your code, set the API key using [BoxRESTApiFactory setAPIKey:@"<MY_KEY>"] before using the SDK. If you do not have an API Key, you can obtain one from http://developers.box.net/
+8. At this point, your project should build with no errors or warnings. If you are having difficulty at this point, please ping us on our [forum](http://forum.developers.box.net/box_developers) or email us directly at developers[at]box[dot]net.
 
 ### Usage ###
 
