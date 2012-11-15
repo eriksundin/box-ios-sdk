@@ -20,7 +20,6 @@
 #import "BoxNetworkOperationManager.h"
 #import "BoxActionTableViewController.h"
 #import "BoxCommonUISetup.h"
-#import "BoxAPIKey.h"
 
 
 @interface MainViewController () <BoxLoginViewControllerDelegate> {
@@ -46,9 +45,12 @@
     [super viewDidLoad];
     UIBarButtonItem * logoutButton = [[[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutPressed:)] autorelease];
     self.navigationItem.leftBarButtonItem = logoutButton;
-    
-    if ([BOX_API_KEY length] == 0) {
-        [[[[UIAlertView alloc] initWithTitle:@"Error" message:@"Currently the API key is not set so the SDK will not work. Go to BoxAPIKey.h to update the API key." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease] show];
+  
+#warning You need to set the API key in order for the demo to work.
+    [BoxRESTApiFactory setAPIKey:@""];
+  
+    if ([BoxRESTApiFactory APIKey] == 0) {
+        [[[[UIAlertView alloc] initWithTitle:@"Error" message:@"Currently the API key is not set so the SDK will not work. Set the API key on the BoxRESTApiFactory." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease] show];
     }
 }
 

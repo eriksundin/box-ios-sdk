@@ -36,6 +36,16 @@
 	
 }
 
+/*
+ * Set the BOX API key to use.
+ */
++(void)setAPIKey:(NSString *)APIKey;
+
+/*
+ * Get the BOX API.
+ */
++(NSString *)APIKey;
+
 + (NSString *)getAuthTokenUrlString:(NSString *)userName userPassword:(NSString *)userPassword;
 + (NSString *)getAccountTreeOneLevelUrlString:(NSString *)token boxFolderId:(NSString *)folderID;
 + (NSString *)getAccountTreeOneLevelUrlStringFoldersOnly:(NSString *)token boxFolderId:(NSString *)folderID;

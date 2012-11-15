@@ -11,6 +11,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		461F00ED1654F0150046B379 /* BoxTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 461F00EA1654F0150046B379 /* BoxTag.m */; };
+		461F00EE1654F0150046B379 /* BoxWebLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 461F00EC1654F0150046B379 /* BoxWebLink.m */; };
 		612FF408152E39240032DE8C /* BoxShareActionInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612FF406152E39230032DE8C /* BoxShareActionInputController.xib */; };
 		612FF409152E39240032DE8C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612FF407152E39230032DE8C /* MainWindow.xib */; };
 		612FF422152E39D50032DE8C /* BoxActionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612FF421152E39D50032DE8C /* BoxActionTableViewController.m */; };
@@ -105,11 +107,14 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* BoxPopup_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxPopup_Prefix.pch; sourceTree = "<group>"; };
+		461F00E91654F0150046B379 /* BoxTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxTag.h; sourceTree = "<group>"; };
+		461F00EA1654F0150046B379 /* BoxTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxTag.m; sourceTree = "<group>"; };
+		461F00EB1654F0150046B379 /* BoxWebLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxWebLink.h; sourceTree = "<group>"; };
+		461F00EC1654F0150046B379 /* BoxWebLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxWebLink.m; sourceTree = "<group>"; };
 		612FF406152E39230032DE8C /* BoxShareActionInputController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BoxShareActionInputController.xib; path = SampleApp/BoxShareActionInputController.xib; sourceTree = "<group>"; };
 		612FF407152E39230032DE8C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = SampleApp/MainWindow.xib; sourceTree = "<group>"; };
 		612FF420152E39D50032DE8C /* BoxActionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxActionTableViewController.h; path = SampleApp/BoxActionTableViewController.h; sourceTree = "<group>"; };
 		612FF421152E39D50032DE8C /* BoxActionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxActionTableViewController.m; path = SampleApp/BoxActionTableViewController.m; sourceTree = "<group>"; };
-		612FF424152E3AFC0032DE8C /* BoxAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAPIKey.h; sourceTree = "<group>"; };
 		612FF425152E3AFC0032DE8C /* BoxCommonUISetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxCommonUISetup.h; sourceTree = "<group>"; };
 		612FF426152E3AFC0032DE8C /* BoxCommonUISetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxCommonUISetup.m; sourceTree = "<group>"; };
 		612FF427152E3AFC0032DE8C /* BoxLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxLoginViewController.h; sourceTree = "<group>"; };
@@ -329,7 +334,6 @@
 		612FF423152E3AFC0032DE8C /* SDKFiles */ = {
 			isa = PBXGroup;
 			children = (
-				612FF424152E3AFC0032DE8C /* BoxAPIKey.h */,
 				612FF425152E3AFC0032DE8C /* BoxCommonUISetup.h */,
 				612FF426152E3AFC0032DE8C /* BoxCommonUISetup.m */,
 				612FF427152E3AFC0032DE8C /* BoxLoginViewController.h */,
@@ -446,6 +450,10 @@
 		612FF45C152E3AFC0032DE8C /* Public Models */ = {
 			isa = PBXGroup;
 			children = (
+				461F00E91654F0150046B379 /* BoxTag.h */,
+				461F00EA1654F0150046B379 /* BoxTag.m */,
+				461F00EB1654F0150046B379 /* BoxWebLink.h */,
+				461F00EC1654F0150046B379 /* BoxWebLink.m */,
 				612FF45D152E3AFC0032DE8C /* BoxComment.h */,
 				612FF45E152E3AFC0032DE8C /* BoxComment.m */,
 				612FF45F152E3AFC0032DE8C /* BoxFile.h */,
@@ -739,6 +747,8 @@
 				612FF4AD152E3AFD0032DE8C /* BoxRenameOperation.m in Sources */,
 				612FF4AE152E3AFD0032DE8C /* BoxUploadOperation.m in Sources */,
 				612FF56D1533686A0032DE8C /* BoxBrowserTableViewController.m in Sources */,
+				461F00ED1654F0150046B379 /* BoxTag.m in Sources */,
+				461F00EE1654F0150046B379 /* BoxWebLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

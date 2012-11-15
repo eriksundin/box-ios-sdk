@@ -16,10 +16,19 @@
 
 
 #import "BoxRESTApiFactory.h" 
-#import "BoxAPIKey.h"
 
+static NSString * BOX_API_KEY = nil;
 
 @implementation BoxRESTApiFactory
+
++(void)setAPIKey:(NSString *)APIKey {
+  [BOX_API_KEY release];
+  BOX_API_KEY = [APIKey copy];
+}
+
++(NSString *)APIKey {
+  return BOX_API_KEY;
+}
 
 + (NSString *)getAuthTokenUrlString:(NSString *)userName userPassword:(NSString *)userPassword {
 	NSString *password = [BoxModelUtilityFunctions urlEncodeParameter:userPassword];
