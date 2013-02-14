@@ -165,11 +165,19 @@
 }
 
 - (void)startActivityIndicator {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+  
+  UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+  
+  UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+  [activityIndicator startAnimating];
+  [self.navigationItem setRightBarButtonItem:item animated:YES];
 }
 
 - (void)stopActivityIndicator {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  
+  [self.navigationItem setRightBarButtonItem:nil animated:YES];
 }
 
 @end
