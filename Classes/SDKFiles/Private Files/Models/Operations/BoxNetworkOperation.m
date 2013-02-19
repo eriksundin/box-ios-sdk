@@ -198,7 +198,11 @@
 
 - (void)requestDidFailWithError:(NSError *)error {
 	if (error) {
-		[self setResponseType:BoxOperationResponseUnknownError];
+    if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorNotConnectedToInternet) {
+      [self setResponseType:BoxOperationResponseNetworkConnectionError];
+    } else {
+      [self setResponseType:BoxOperationResponseUnknownError];
+    }
 		self.error = error;
 	}
 	
