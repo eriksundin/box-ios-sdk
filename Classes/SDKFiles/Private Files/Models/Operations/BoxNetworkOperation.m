@@ -198,18 +198,15 @@
 
 - (void)requestDidFailWithError:(NSError *)error {
 
-  self.error = error;
 	if (error) {
-    if ([error.domain isEqualToString:NSURLErrorDomain]) {
-      if (error.code == NSURLErrorNotConnectedToInternet) {
-        [self setResponseType:BoxOperationResponseNetworkConnectionError];
-        return;
-      } else if (error.code == NSURLErrorNetworkConnectionLost) {
-        [self setResponseType:BoxOperationResponseNetworkConnectionLost];
-        return;
-      }
+    if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorNotConnectedToInternet) {
+      [self setResponseType:BoxOperationResponseNetworkConnectionError];
+    } else if ([error.domain isEqualToString:NSURLErrorDomain] &&  error.code == NSURLErrorNetworkConnectionLost) {
+      [self setResponseType:BoxOperationResponseNetworkConnectionLost];
+    } else {
+      [self setResponseType:BoxOperationResponseUnknownError];
     }
-    [self setResponseType:BoxOperationResponseUnknownError];
+    self.error = error;
   }
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
