@@ -76,42 +76,46 @@ static BoxNetworkOperationManager * sharedManager = nil;
 }
 
 + (NSString*)humanReadableErrorFromResponse:(BoxOperationResponse)response {
-    switch (response) {
-        case BoxOperationResponseNone:
-        case BoxOperationResponseUnknownError:
-            return @"Unknown error.";
-        case BoxOperationResponseSuccessful:
-            return @"Network operation successful";
-        case BoxOperationResponseNotLoggedIn:
-            return @"User not logged in.";
-        case BoxOperationResponseWrongPermissions:
-            return @"User does not have the correct permissions.";
-        case BoxOperationResponseInvalidName:
-            return @"Invalid name.";
-        case BoxOperationResponseAlreadyRegistered:
-            return @"User is already registered.";
-        case BoxOperationResponseDiskError:
-            return @"Disk error.";
-        case BoxOperationResponseProtectedWriteError:
-            return @"Protected write error";
-        case BoxOperationResponseUnknownFolderID:
-            return @"Unknown folder ID. Possibly the folder specified no longer exists.";
-        case BoxOperationResponseUserCancelled:
-            return @"Operation didn't complete because it was canceled by the user.";
-        case BoxOperationResponseSyncStateAlreadySet:
-            return @"The sync has already completed.";
-        case BoxOperationResponseInternalAPIError:
-            return @"There was an internal problem with your request.";
-        default:
-            return @"";
-    }
+  switch (response) {
+    case BoxOperationResponseNone:
+    case BoxOperationResponseUnknownError:
+      return @"Unknown error.";
+    case BoxOperationResponseSuccessful:
+      return @"Network operation successful";
+    case BoxOperationResponseNotLoggedIn:
+      return @"User not logged in.";
+    case BoxOperationResponseWrongPermissions:
+      return @"User does not have the correct permissions.";
+    case BoxOperationResponseInvalidName:
+      return @"Invalid name.";
+    case BoxOperationResponseAlreadyRegistered:
+      return @"User is already registered.";
+    case BoxOperationResponseDiskError:
+      return @"Disk error.";
+    case BoxOperationResponseProtectedWriteError:
+      return @"Protected write error";
+    case BoxOperationResponseUnknownFolderID:
+      return @"Unknown folder ID. Possibly the folder specified no longer exists.";
+    case BoxOperationResponseUserCancelled:
+      return @"Operation didn't complete because it was canceled by the user.";
+    case BoxOperationResponseSyncStateAlreadySet:
+      return @"The sync has already completed.";
+    case BoxOperationResponseNetworkConnectionError:
+      return @"Unable to connect to the network.";
+    case BoxOperationResponseNetworkConnectionLost:
+      return @"The network connection was lost.";
+    case BoxOperationResponseInternalAPIError:
+      return @"There was an internal problem with your request.";
+    default:
+      return @"";
+  }
 }
 
 #pragma mark - Private Methods
 
 - (void)getFolder:(NSDictionary*)params {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
+  
 	BoxUser* userModel = [BoxUser savedUser];
 	
 	NSString * ticket = userModel.authToken;

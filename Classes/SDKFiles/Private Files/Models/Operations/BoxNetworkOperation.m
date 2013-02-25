@@ -197,14 +197,20 @@
 }
 
 - (void)requestDidFailWithError:(NSError *)error {
+
+  self.error = error;
 	if (error) {
-    if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorNotConnectedToInternet) {
-      [self setResponseType:BoxOperationResponseNetworkConnectionError];
-    } else {
-      [self setResponseType:BoxOperationResponseUnknownError];
+    if ([error.domain isEqualToString:NSURLErrorDomain]) {
+      if (error.code == NSURLErrorNotConnectedToInternet) {
+        [self setResponseType:BoxOperationResponseNetworkConnectionError];
+        return;
+      } else if (error.code == NSURLErrorNetworkConnectionLost) {
+        [self setResponseType:BoxOperationResponseNetworkConnectionLost];
+        return;
+      }
     }
-		self.error = error;
-	}
+    [self setResponseType:BoxOperationResponseUnknownError];
+  }
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	if ([_delegate respondsToSelector:@selector(operation:didCompleteForPath:response:)]) {

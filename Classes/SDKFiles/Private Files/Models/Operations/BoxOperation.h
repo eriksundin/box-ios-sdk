@@ -76,6 +76,7 @@ typedef enum _BoxOperationResponse {
 	BoxOperationResponseSyncStateAlreadySet,
 	BoxOperationResponseInternalAPIError,
   BoxOperationResponseNetworkConnectionError,
+  BoxOperationResponseNetworkConnectionLost,
 	BoxOperationResponseUnknownError = 100
 } BoxOperationResponse;
 
